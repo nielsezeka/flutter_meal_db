@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_meal_db/screens/home_page_restaurant_modelstest.dart';
 import 'package:theme_provider/theme_provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<RestaurantAll> restaurant = restaurantall;
   @override
   Widget build(BuildContext context) {
     final widthCustom = MediaQuery.of(context).size.width;
@@ -123,23 +125,25 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.green,
                   width: 170,
                   height: 200,
-                  child: ListView.builder(itemBuilder: (context, index) {
-                    return Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                    'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
-                                fit: BoxFit.cover,
+                  child: ListView.builder(
+                      itemCount: restaurant.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image:
+                                        NetworkImage(restaurant[index].image),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
-                            ),
+                            ],
                           ),
-                        ],
-                      ),
-                    );
-                  }),
+                        );
+                      }),
                 ),
               ]),
             ),
