@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).accentColor,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
