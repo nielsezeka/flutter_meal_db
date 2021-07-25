@@ -119,6 +119,28 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     )),
+                Container(
+                  color: Colors.green,
+                  width: 170,
+                  height: 200,
+                  child: ListView.builder(itemBuilder: (context, index) {
+                    return Container(
+                      child: Column(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                    'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
+                ),
               ]),
             ),
           ),
