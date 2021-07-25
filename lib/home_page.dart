@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
               width: widthCustom * 1,
               height: heightCustom * 1,
               padding: EdgeInsets.all(10),
-              color: Colors.black,
+              color: Theme.of(context).primaryColor,
               child: Column(children: [
                 Container(
                   child: Row(
