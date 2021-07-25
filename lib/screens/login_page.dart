@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_meal_db/constants/routing.dart';
 import 'package:theme_provider/theme_provider.dart';
+
+import '../home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -31,6 +34,12 @@ class _LoginPageState extends State<LoginPage> {
                         .setTheme('custom_theme2');
                   },
                   child: Text('Use theme2')),
+              TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  },
+                  child: Icon(Icons.play_arrow))
             ],
           ),
         ),
