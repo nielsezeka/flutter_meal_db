@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green[800],
+          backgroundColor: Theme.of(context).primaryColor, // Colors.green[800],
         ),
       ),
     );
