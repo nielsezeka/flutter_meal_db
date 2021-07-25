@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_meal_db/constants/routing.dart';
 import 'package:theme_provider/theme_provider.dart';
-
-import '../home_page.dart';
+import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
