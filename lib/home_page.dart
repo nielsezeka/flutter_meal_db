@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               width: widthCustom * 1,
               height: heightCustom * 1,
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.all(20),
               color: Theme.of(context).primaryColor,
               child: Column(children: [
                 Container(
@@ -36,26 +36,26 @@ class _HomePageState extends State<HomePage> {
                             'Find Your',
                             style: TextStyle(
                                 fontSize: 40,
-                                color: Colors.white,
+                                color: Theme.of(context).accentColor,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             'Favorite Food',
                             style: TextStyle(
                                 fontSize: 40,
-                                color: Colors.white,
+                                color: Theme.of(context).accentColor,
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
                       SizedBox(
-                        width: 60,
+                        width: 70,
                       ),
                       Container(
                         child: IconButton(
                           icon: Icon(
                             Icons.notifications,
-                            color: Colors.white,
+                            color: Theme.of(context).accentColor,
                             size: 30,
                           ),
                           onPressed: () {},
@@ -65,25 +65,25 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Container(
-                  color: Colors.black,
+                  color: Theme.of(context).primaryColor,
                   height: 100,
                   child: Row(
                     children: [
                       Container(
-                        color: Colors.black,
+                        color: Theme.of(context).primaryColor,
                         height: 60,
                         width: 300,
                         child: TextField(
                           decoration: InputDecoration(
                               prefixIcon: Icon(
                                 Icons.search,
-                                color: Colors.white,
+                                color: Theme.of(context).accentColor,
                               ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),
                               hintStyle: TextStyle(
-                                color: Colors.white,
+                                color: Theme.of(context).accentColor,
                               ),
                               hintText: 'What Do You Want Oder ?'),
                         ),
@@ -93,14 +93,32 @@ class _HomePageState extends State<HomePage> {
                           child: IconButton(
                             onPressed: () {},
                             icon: Icon(Icons.control_point),
-                            color: Colors.white,
+                            color: Theme.of(context).accentColor,
                             iconSize: 30,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
-                )
+                ),
+                Container(
+                    height: 50,
+                    color: Theme.of(context).primaryColor,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Restaurant',
+                            style: TextStyle(
+                                color: Theme.of(context).accentColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          ),
+                        ),
+                      ],
+                    )),
               ]),
             ),
           ),
