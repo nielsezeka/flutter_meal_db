@@ -1,15 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:theme_provider/theme_provider.dart';
 
 import 'homepage.dart';
 
-void main() => runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Food App',
-      home: FoodApp(),
-    ));
+void main() => runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Food App',
+        home: MyApp(),
+      ),
+    );
 
-class FoodApp extends StatelessWidget {
-  const FoodApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ThemeProvider(
+      themes: [
+        AppTheme.light(),
+        AppTheme.dark(),
+        AppTheme(
+          id: "custom_theme",
+          description: "My Custom Theme",
+          data: ThemeData(
+            primaryColor: Colors.green[800],
+            accentColor: Colors.red,
+          ),
+        ),
+      ],
+      child: ThemeConsumer(
+        child: Builder(
+          builder: (themeContext) => MaterialApp(
+            theme: ThemeProvider.themeOf(themeContext).data,
+            title: 'Material App',
+            home: WelcomeScreen(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
