@@ -122,29 +122,111 @@ class _HomePageState extends State<HomePage> {
                       ],
                     )),
                 Container(
-                  color: Colors.green,
-                  width: 170,
+                  color: Theme.of(context).primaryColor,
+                  width: 400,
                   height: 200,
                   child: ListView.builder(
                       itemCount: restaurant.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(5),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    height: 150,
+                                    width: 150,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                            restaurant[index].imageURLFile),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text(
+                              restaurant[index].name,
+                              style: TextStyle(
+                                  color: Theme.of(context).accentColor,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        );
+                      }),
+                ),
+                Container(
+                    height: 50,
+                    color: Theme.of(context).primaryColor,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Pupularmenu',
+                            style: TextStyle(
+                                color: Theme.of(context).accentColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          ),
+                        ),
+                      ],
+                    )),
+                Container(
+                  height: 180,
+                  width: 400,
+                  color: Theme.of(context).primaryColor,
+                  child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: restaurant.length,
                       itemBuilder: (context, index) {
                         return Container(
-                          child: Column(
+                          padding: EdgeInsets.all(1),
+                          height: 70,
+                          width: 400,
+                          color: Theme.of(context).primaryColor,
+                          child: Row(
                             children: [
                               Container(
+                                padding: EdgeInsets.all(5),
+                                width: 70,
+                                height: 70,
                                 decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image:
-                                        NetworkImage(restaurant[index].image),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
+                                    color: Colors.amber,
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          restaurant[index].imageURLFile),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10)),
                               ),
+                              Container(
+                                padding: EdgeInsets.all(15),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Ten Mon An',
+                                      style: TextStyle(
+                                          color: Theme.of(context).accentColor),
+                                    ),
+                                    Text(restaurant[index].name),
+                                  ],
+                                ),
+                              )
                             ],
                           ),
                         );
                       }),
-                ),
+                )
               ]),
             ),
           ),
