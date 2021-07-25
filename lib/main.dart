@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_meal_db/constants/routing.dart';
+import 'package:theme_provider/theme_provider.dart';
+import 'router.dart' as router;
 
+<<<<<<< HEAD
 import 'home_page.dart';
 
 void main() => runApp(MaterialApp(
@@ -79,8 +83,38 @@ class FoodApp extends StatelessWidget {
                   ),
                 ],
               ),
+=======
+void main() => runApp(
+      ThemeProvider(
+        themes: [
+          AppTheme(
+            id: "custom_theme",
+            description: "My Custom Theme",
+            data: ThemeData(
+              primaryColor: Colors.green,
+              accentColor: Colors.red,
             ),
-          )),
+          ),
+          AppTheme(
+            id: "custom_theme2",
+            description: "My Custom Theme",
+            data: ThemeData(
+              primaryColor: Colors.black,
+              accentColor: Colors.blue,
+>>>>>>> 0da7118cff1aa1fae6697fc67f233ba0c31ab349
+            ),
+          ),
+        ],
+        child: ThemeConsumer(
+          child: Builder(
+            builder: (themeContext) => MaterialApp(
+              theme: ThemeProvider.themeOf(themeContext).data,
+              debugShowCheckedModeBanner: false,
+              title: 'Food App',
+              onGenerateRoute: router.generateRoute,
+              initialRoute: LoginPageRoute,
+            ),
+          ),
+        ),
+      ),
     );
-  }
-}
