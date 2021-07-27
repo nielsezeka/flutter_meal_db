@@ -20,11 +20,11 @@ class _RestaurantPageState extends State<RestaurantPage> {
             child: Stack(
               children: [
                 Container(
-                  height: 274,
+                  height: 300,
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
                     image: DecorationImage(
-                      image: AssetImage("assets/hightland"),
+                      image: AssetImage("assets/higtland1.jpg"),
                     ),
                   ),
                 ),
