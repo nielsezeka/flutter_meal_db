@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_meal_db/screens/thankyou_page.dart';
 
-class RestaurantItem extends StatefulWidget {
-  const RestaurantItem({Key? key}) : super(key: key);
+class FoodItemPage extends StatefulWidget {
+  const FoodItemPage({Key? key}) : super(key: key);
 
   @override
-  _RestaurantItemState createState() => _RestaurantItemState();
+  _FoodItemPageState createState() => _FoodItemPageState();
 }
 
-class _RestaurantItemState extends State<RestaurantItem> {
+class _FoodItemPageState extends State<FoodItemPage> {
   @override
   Widget build(BuildContext context) {
     final widthCustom = MediaQuery.of(context).size.width;

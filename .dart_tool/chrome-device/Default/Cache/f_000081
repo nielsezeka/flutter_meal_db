@@ -1,328 +1,57 @@
-define(['dart_sdk', 'packages/file/src/forwarding/forwarding_link.dart', 'packages/file/src/interface/link.dart', 'packages/file/src/common.dart'], (function load__packages__file__src__backends__local__local_link_dart(dart_sdk, packages__file__src__forwarding__forwarding_link$46dart, packages__file__src__interface__link$46dart, packages__file__src__common$46dart) {
+define(['dart_sdk'], (function load__packages__characters__src__grapheme_clusters__table_dart(dart_sdk) {
   'use strict';
   const core = dart_sdk.core;
-  const _js_helper = dart_sdk._js_helper;
-  const _internal = dart_sdk._internal;
-  const io = dart_sdk.io;
-  const async = dart_sdk.async;
-  const typed_data = dart_sdk.typed_data;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const forwarding_file_system_entity = packages__file__src__forwarding__forwarding_link$46dart.src__forwarding__forwarding_file_system_entity;
-  const forwarding_link = packages__file__src__forwarding__forwarding_link$46dart.src__forwarding__forwarding_link;
-  const forwarding_file = packages__file__src__forwarding__forwarding_link$46dart.src__forwarding__forwarding_file;
-  const forwarding_directory = packages__file__src__forwarding__forwarding_link$46dart.src__forwarding__forwarding_directory;
-  const directory = packages__file__src__interface__link$46dart.src__interface__directory;
-  const file = packages__file__src__interface__link$46dart.src__interface__file;
-  const link = packages__file__src__interface__link$46dart.src__interface__link;
-  const file_system = packages__file__src__interface__link$46dart.src__interface__file_system;
-  const common = packages__file__src__common$46dart.src__common;
-  var local_link = Object.create(dart.library);
-  var local_file = Object.create(dart.library);
-  var local_file_system_entity = Object.create(dart.library);
-  var local_directory = Object.create(dart.library);
-  var $noSuchMethod = dartx.noSuchMethod;
+  var table = Object.create(dart.library);
+  var $rightShift = dartx['>>'];
+  var $codeUnitAt = dartx.codeUnitAt;
   dart._checkModuleNullSafetyMode(true);
-  var T = {
-    SymbolL: () => (T.SymbolL = dart.constFn(dart.legacy(core.Symbol)))(),
-    LinkedMapOfSymbolL$dynamic: () => (T.LinkedMapOfSymbolL$dynamic = dart.constFn(_js_helper.LinkedMap$(T.SymbolL(), dart.dynamic)))(),
-    FutureOfFileSystemEntity: () => (T.FutureOfFileSystemEntity = dart.constFn(async.Future$(io.FileSystemEntity)))()
-  };
   const CT = Object.create({
     _: () => (C, CT)
   });
-  dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const(new _js_helper.PrivateSymbol.new('_deleteSync', _deleteSync));
+  table.low = function low(codeUnit) {
+    let chunkStart = table._start[$codeUnitAt](codeUnit[$rightShift](6));
+    let index = chunkStart + (codeUnit & 63);
+    let bit = index & 1;
+    let pair = table._data[$codeUnitAt](index[$rightShift](1));
+    return (pair[$rightShift](4) & -bit | pair & 15 & bit - 1) >>> 0;
+  };
+  table.high = function high(lead, tail) {
+    let chunkStart = table._start[$codeUnitAt](1024 + (1023 & lead));
+    let index = chunkStart + (1023 & tail);
+    let bit = index & 1;
+    let pair = table._data[$codeUnitAt](index[$rightShift](1));
+    return (pair[$rightShift](4) & -bit | pair & 15 & bit - 1) >>> 0;
+  };
+  table.move = function move(state, inputCategory) {
+    return table._stateMachine[$codeUnitAt]((state & 240 | inputCategory) >>> 0);
+  };
+  table.moveBack = function moveBack(state, inputCategory) {
+    return table._backStateMachine[$codeUnitAt]((state & 240 | inputCategory) >>> 0);
+  };
+  dart.defineLazy(table, {
+    /*table._data*/get _data() {
+      return "\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"3333s3#7333333339433333333333333CDDDDDDDDDDDDDDDDDDDDDDC433DDDDD4DDDDDDDDDDDDDDDDDD3CU33333333333333333333333333334T5333333333333333333333333333CCD3D33CD533333333333333333333333TEDTET53U5UE3333C33333333333333333333333333333CETUTDT5333333333333333333333333SUUUUUEUDDDDD43333433333333333333333333ET533E3333SDD3U3U4333343333C4333333333333CSD33343333333433333333333333333SUUUEDDDTE4333SDDSUSU333343333C43333333333333333s333333333337333333333333wwwww73sw33sww7swwwwwss33373733s33333w33333£ªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªº»»»»»»»»»»»»»»»»»»»ËÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌìîÞîîîîîîîîîîîîîÞîîîîîîîîîîîîîÞîîîîîîîîîîîîî>33333³»»»»»»»;3ÃÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌ334343C33333333333SET333333333333333EDTETD433333333CD33333333333333CD33333CDD4333333333333333333333333CDTDDDCTE43C4CD3C333333333333333D3C3333333333DDDDD42333333333333333333CDDD4333333333333333333333333DDDD433334333C53333333333333333333333C33TEDCSUUU433333333S533333333333333333333333333333CD4DDDDD3D5333333333333333333333333333CSEUCUSE4333D33333C43333333333333CDDD9DDD3DCD433333333CDCDDDDDDEDDD33433C3E433#\"\"\"\"\" \"\"\"\"\"\"\"\"2333333333333333CDUUDU53SEUUUD43SDD3U3U4333C43333C43333333333333SE43CD33333333DD33333CDDDDDDDDDD3333333343333333B!233333333333#\"\"\"333333s3CD533333333333333333333333333CESEU3333333333333333333DDDD433333CD2333333333333333333333333\"\"\"\"23333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333CDD33333333333333333333333333333CDDD3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333SUDDDDUDT43333333333343333333333333333333333333333333333333333TEDDTTEETD333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333CUDD3UUDE43333333333333D33333333333333333333333333333333333333333UEDDDTEE43333333333333333333333333333333333333333333333333333CEUDDDE33333333333333333333333333333333333333333333333333CDUDDEDD3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333D#\"2333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333CSUUUUUUUUUUUUUUUUUUUUUUUUUUU333CD4333333333333333333333333333333333333333333333333333333\"\"\"\"\"\"33EDDCTSE3333333333D33333333333DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCDDDDDDDD3DDD4DCDD3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333CDDD33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333CD4333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333CDDDDD333333333333333333333333333333333333333333333333333333333333333333333333333333333333333s73333s33333333333\"\"\"\"\"\"\"\"3333333373s333333333333333333333333333333CTDDDTU5D4DD333C433333D33333333333333DU433333333333333333333DDDUDUD3333S3333333333333333334333333333333s733333s33333333333CD4DDDD4D4DD4333333333sww73333333w3333333333sw3333s33333337333333sw333333333s733333333333333333UTEUS433333333C433333333333333C433333333333334443SUE4333333333333CDDDDDDDD4333333DDDDDT533333£ªªªªªªªªªªªªªª3SDDDDUUT5DDD43333C43333333333333333C33333333333EEDDDCC3DDDDUUUDDDDD3T5333333333333333333333333333CSDDD433E533333333333333333333333333DDDDDDD4333333333333333333333333333CD53333333333333333333333UEDTE433333333333333333333333333333333D433333333333333333CDDEDDD43333333S5333333333333333333333C333333D533333333333333333333333SUDDDDT533CD433333333333333333333333333333333333333333333333UEDUTD33343333333333333333333333333333333333333333333333333333333333333333333333333333333CUEDDD43333333333DU333333333333333333333333333C4TTU5S5SU3333C33333U3DDD43DD4333333333333333333333333333333333333333333333333333333333333333333333DDDDDDD533333333333333333333333DDDTTU43333333333333333333333333333DDD733333s373ss33w7733333ww733333333333ss33333333333333333333333333333ww3333333333333333333333333333wwww33333www33333333333333333333wwww333333333333333wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww333333wwwwwwwwwwwwwwwwwwwwwww7wwwwwswwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww7333swwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww733333333333333333333333swwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww7333333333333333333333333333333333333333333333333333333333swwwww7333333333333333333333333333333333333333333wwwwwwwwwwwwwwwwwwwww7wwwwwwswwwwwwwwwwwwwwwwwwwww73333swwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww7333333w7333333333333333733333333333333333333333333333sww733333s7333333s3wwwww333333333wwwwwwwwwwwwwwwwwwwwwwwwwwwwgffffffffffff6wwwwwww73333s33333333337swwwwsw73333wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwDDDDDDDDDDDDDDDDDDDDDDDD33333333DDDDDDDD33333333DDDDDDDDDDDDDDDD43333333DC44333333333333333333333333333SUDDDDTD33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333UED4CTUE3S33333333333333DDDDD33333333333333333333DDDDD333343333DDDUD43333333333333333333IDDDDDDE4333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333CDDDDDDDDDDDDDDDDDDDDDDDDDDD33DDDDDDDDDDDDDDDDDDDDDDDDD33334333333C33333333333DD4DDDDDDD43333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333TD43EDD\"\"\"\"DDDD3DDD433333333333333CD43333333333333333333333333333333333333333333333333333333333333333333333333CD33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333C33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333433333333333333333333333333333333333333333333333333333333333333333333333333DD4333333333333333333333333333333333333333333333333333333333333333333EDDDCDDT43333333333333333333333333333333333333333CDDDDDDDDDD4EDDDETD3333333333333333333333333333333333333333333333333333333333333DDD3CC4DDD433333333333333333333333333333333SUUC4UT433333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333DU333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333CDDD333333333333333333333333333333333333333333333333333333CDDD3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333CDC433DD33333333333333333333D43C3333333333333333333333333333333333333333333333333333333333333333333333333333333333C4333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333334EDDDD3";
     },
-    get C1() {
-      return C[1] = dart.const(new _internal.Symbol.new('recursive'));
+    /*table._start*/get _start() {
+      return "฻᳛אါါါါါါါါါ 㢜ါါါါ䢜ါါါؠ㤫ద໺ါ෋؁㹾⊏౷ⓓ䂲ါᵑ཯⚁ژࡑൣ௦ൣᴪەປݱݜ⮘⏾✇ඡ⩒࣫ഓೣ✒ౢ䶝஗○⬡ٙ䋅ப໅ࢍါহ৙৹ਡါါါါါ䂮ါါါါါါါါါါါါါါୟ▱⏁ߵ࿢ါ⚞ါ๛ါါါ␧⛉❚ါ⭜ྭ଱މࢫါါ෻ါါါᵴါါါါါါါါ༯⍲ါ㣬एါ━ါါါါါ⒩ါ㗈हါါါ⎵ါါ⍅Ⱗ㑗⶝㒑⶝ॹ⯥┬ါါါါါ⌻ါါါါါါါ╦⎢ါါါါါ䂜ါ䊌ါ㶹ါါါါါါါါ⮬ါᛉါါါါါါါⰎါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါത䲕䲃ါါါါଌါ޻☉ృ♁ܟ⒃⑃ಱۡࠑါါါ▃੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱ੹੥੭ੵ੡੩ੱક૎ǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰǰါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါ䊭ါါါါါါါါါါါ㢼ါါ᳛ါါ䲕ᳪ䃎ါ䧎Ὧ❒ᔆ㤿䒟ါါါါါ࿲ါါါါါါါါါါါါᄻᤚါါါါါါါါါါါါါါါါါါါᡩါါါါ㺉ါ㯙ါᶧါ䟏ါ㒡そⱖ⶝ါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါ ǰǰǰါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါါ";
     },
-    get C2() {
-      return C[2] = dart.const(new _js_helper.PrivateSymbol.new('_delete', _delete));
+    /*table._stateMachine*/get _stateMachine() {
+      return " 0000 @P`p`p± 0000 @P`p`p° 0000 @P`p`p° 1011 @P`p`p° 1111¡AQaqaq° 1011 @Qapaq° 1011 @Paq`p° 1011 @P`q`p° 01 @P`p`p° 1011 @P`p`p° 10111@P`p`p°!1111¡AQaqaq±";
     },
-    get C3() {
-      return C[3] = dart.const(new _js_helper.PrivateSymbol.new('_rawPath', _rawPath));
-    },
-    get C4() {
-      return C[4] = dart.const(new _js_helper.PrivateSymbol.new('_path', _path));
-    },
-    get C5() {
-      return C[5] = dart.const(new _js_helper.PrivateSymbol.new('_absolutePath', _absolutePath));
-    },
-    get C6() {
-      return C[6] = dart.const(new _js_helper.PrivateSymbol.new('_deleteSync', _deleteSync$0));
-    },
-    get C7() {
-      return C[7] = dart.const(new _js_helper.PrivateSymbol.new('_delete', _delete$0));
-    },
-    get C8() {
-      return C[8] = dart.const(new _js_helper.PrivateSymbol.new('_rawPath', _rawPath$0));
-    },
-    get C9() {
-      return C[9] = dart.const(new _js_helper.PrivateSymbol.new('_path', _path$0));
-    },
-    get C10() {
-      return C[10] = dart.const(new _js_helper.PrivateSymbol.new('_absolutePath', _absolutePath$0));
-    },
-    get C11() {
-      return C[11] = dart.const(new _js_helper.PrivateSymbol.new('_deleteSync', _deleteSync$1));
-    },
-    get C12() {
-      return C[12] = dart.const(new _js_helper.PrivateSymbol.new('_delete', _delete$1));
-    },
-    get C13() {
-      return C[13] = dart.const(new _js_helper.PrivateSymbol.new('_rawPath', _rawPath$1));
-    },
-    get C14() {
-      return C[14] = dart.const(new _js_helper.PrivateSymbol.new('_path', _path$1));
-    },
-    get C15() {
-      return C[15] = dart.const(new _js_helper.PrivateSymbol.new('_absolutePath', _absolutePath$1));
+    /*table._backStateMachine*/get _backStateMachine() {
+      return "@0@@  0P`pPP±@0@@  0P`pPP°@0@@  0P`pPP°@0@@  1P`pPP°A1AA¡ 1QaqQQ°@0@@  1Q`pPP°@0@@  1QapQP°@0@@  1PaqQQ°à0@@  1P`pPP°±±±±±Á±±±±±±±±@0@@Ð 1P`pPP°A1AA¡!1QaqQQ±@0@@ 1P`pPP°";
     }
   }, false);
-  var C = Array(16).fill(void 0);
-  var I = [
-    "package:file/src/backends/local/local_file_system_entity.dart",
-    "package:file/src/backends/local/local_link.dart",
-    "package:file/src/backends/local/local_file.dart",
-    "package:file/src/backends/local/local_directory.dart"
-  ];
-  var _deleteSync = dart.privateName(local_link, "_deleteSync");
-  var _deleteSync$ = dart.privateName(io, "_deleteSync");
-  var _delete = dart.privateName(local_link, "_delete");
-  var _delete$ = dart.privateName(io, "_delete");
-  var _rawPath = dart.privateName(local_link, "_rawPath");
-  var _rawPath$ = dart.privateName(io, "_rawPath");
-  var _path = dart.privateName(local_link, "_path");
-  var _path$ = dart.privateName(io, "_path");
-  var _absolutePath = dart.privateName(local_link, "_absolutePath");
-  var _absolutePath$ = dart.privateName(io, "_absolutePath");
-  var fileSystem$ = dart.privateName(local_file_system_entity, "LocalFileSystemEntity.fileSystem");
-  var delegate$ = dart.privateName(local_file_system_entity, "LocalFileSystemEntity.delegate");
-  const _is_LocalFileSystemEntity_default = Symbol('_is_LocalFileSystemEntity_default');
-  local_file_system_entity.LocalFileSystemEntity$ = dart.generic((T, D) => {
-    class LocalFileSystemEntity extends forwarding_file_system_entity.ForwardingFileSystemEntity$(T, D) {
-      get fileSystem() {
-        return this[fileSystem$];
-      }
-      set fileSystem(value) {
-        super.fileSystem = value;
-      }
-      get delegate() {
-        return this[delegate$];
-      }
-      set delegate(value) {
-        super.delegate = value;
-      }
-      get dirname() {
-        return this.fileSystem.path.dirname(this.path);
-      }
-      get basename() {
-        return this.fileSystem.path.basename(this.path);
-      }
-      wrapDirectory(delegate) {
-        return new local_directory.LocalDirectory.new(this.fileSystem, delegate);
-      }
-      wrapFile(delegate) {
-        return new local_file.LocalFile.new(this.fileSystem, delegate);
-      }
-      wrapLink(delegate) {
-        return new local_link.LocalLink.new(this.fileSystem, delegate);
-      }
-    }
-    (LocalFileSystemEntity.new = function(fileSystem, delegate) {
-      this[fileSystem$] = fileSystem;
-      this[delegate$] = delegate;
-      ;
-    }).prototype = LocalFileSystemEntity.prototype;
-    dart.addTypeTests(LocalFileSystemEntity);
-    LocalFileSystemEntity.prototype[_is_LocalFileSystemEntity_default] = true;
-    dart.addTypeCaches(LocalFileSystemEntity);
-    dart.setMethodSignature(LocalFileSystemEntity, () => ({
-      __proto__: dart.getMethods(LocalFileSystemEntity.__proto__),
-      wrapDirectory: dart.fnType(directory.Directory, [io.Directory]),
-      wrapFile: dart.fnType(file.File, [io.File]),
-      wrapLink: dart.fnType(link.Link, [io.Link])
-    }));
-    dart.setLibraryUri(LocalFileSystemEntity, I[0]);
-    dart.setFieldSignature(LocalFileSystemEntity, () => ({
-      __proto__: dart.getFields(LocalFileSystemEntity.__proto__),
-      fileSystem: dart.finalFieldType(file_system.FileSystem),
-      delegate: dart.finalFieldType(D)
-    }));
-    return LocalFileSystemEntity;
-  });
-  local_file_system_entity.LocalFileSystemEntity = local_file_system_entity.LocalFileSystemEntity$();
-  dart.addTypeTests(local_file_system_entity.LocalFileSystemEntity, _is_LocalFileSystemEntity_default);
-  const LocalFileSystemEntity_ForwardingLink$36 = class LocalFileSystemEntity_ForwardingLink extends local_file_system_entity.LocalFileSystemEntity$(link.Link, io.Link) {};
-  (LocalFileSystemEntity_ForwardingLink$36.new = function(fileSystem, delegate) {
-    LocalFileSystemEntity_ForwardingLink$36.__proto__.new.call(this, fileSystem, delegate);
-  }).prototype = LocalFileSystemEntity_ForwardingLink$36.prototype;
-  dart.applyMixin(LocalFileSystemEntity_ForwardingLink$36, forwarding_link.ForwardingLink);
-  local_link.LocalLink = class LocalLink extends LocalFileSystemEntity_ForwardingLink$36 {
-    toString() {
-      return "LocalLink: '" + this.path + "'";
-    }
-    [_deleteSync$](opts) {
-      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
-      return this[$noSuchMethod](new core._Invocation.method(C[0] || CT.C0, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive])));
-    }
-    [_delete$](opts) {
-      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
-      return T.FutureOfFileSystemEntity().as(this[$noSuchMethod](new core._Invocation.method(C[2] || CT.C2, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive]))));
-    }
-    get [_rawPath$]() {
-      return typed_data.Uint8List.as(this[$noSuchMethod](new core._Invocation.getter(C[3] || CT.C3)));
-    }
-    get [_path$]() {
-      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[4] || CT.C4)));
-    }
-    get [_absolutePath$]() {
-      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[5] || CT.C5)));
-    }
-  };
-  (local_link.LocalLink.new = function(fs, delegate) {
-    local_link.LocalLink.__proto__.new.call(this, fs, delegate);
-    ;
-  }).prototype = local_link.LocalLink.prototype;
-  dart.addTypeTests(local_link.LocalLink);
-  dart.addTypeCaches(local_link.LocalLink);
-  dart.setMethodSignature(local_link.LocalLink, () => ({
-    __proto__: dart.getMethods(local_link.LocalLink.__proto__),
-    [_deleteSync$]: dart.fnType(dart.void, [], {recursive: core.bool}, {}),
-    [_delete$]: dart.fnType(async.Future$(io.FileSystemEntity), [], {recursive: core.bool}, {})
-  }));
-  dart.setGetterSignature(local_link.LocalLink, () => ({
-    __proto__: dart.getGetters(local_link.LocalLink.__proto__),
-    [_rawPath$]: typed_data.Uint8List,
-    [_path$]: core.String,
-    [_absolutePath$]: core.String
-  }));
-  dart.setLibraryUri(local_link.LocalLink, I[1]);
-  dart.defineExtensionMethods(local_link.LocalLink, ['toString']);
-  var _deleteSync$0 = dart.privateName(local_file, "_deleteSync");
-  var _delete$0 = dart.privateName(local_file, "_delete");
-  var _rawPath$0 = dart.privateName(local_file, "_rawPath");
-  var _path$0 = dart.privateName(local_file, "_path");
-  var _absolutePath$0 = dart.privateName(local_file, "_absolutePath");
-  const LocalFileSystemEntity_ForwardingFile$36 = class LocalFileSystemEntity_ForwardingFile extends local_file_system_entity.LocalFileSystemEntity$(file.File, io.File) {};
-  (LocalFileSystemEntity_ForwardingFile$36.new = function(fileSystem, delegate) {
-    LocalFileSystemEntity_ForwardingFile$36.__proto__.new.call(this, fileSystem, delegate);
-  }).prototype = LocalFileSystemEntity_ForwardingFile$36.prototype;
-  dart.applyMixin(LocalFileSystemEntity_ForwardingFile$36, forwarding_file.ForwardingFile);
-  local_file.LocalFile = class LocalFile extends LocalFileSystemEntity_ForwardingFile$36 {
-    toString() {
-      return "LocalFile: '" + this.path + "'";
-    }
-    [_deleteSync$](opts) {
-      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
-      return this[$noSuchMethod](new core._Invocation.method(C[6] || CT.C6, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive])));
-    }
-    [_delete$](opts) {
-      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
-      return T.FutureOfFileSystemEntity().as(this[$noSuchMethod](new core._Invocation.method(C[7] || CT.C7, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive]))));
-    }
-    get [_rawPath$]() {
-      return typed_data.Uint8List.as(this[$noSuchMethod](new core._Invocation.getter(C[8] || CT.C8)));
-    }
-    get [_path$]() {
-      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[9] || CT.C9)));
-    }
-    get [_absolutePath$]() {
-      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[10] || CT.C10)));
-    }
-  };
-  (local_file.LocalFile.new = function(fs, delegate) {
-    local_file.LocalFile.__proto__.new.call(this, fs, delegate);
-    ;
-  }).prototype = local_file.LocalFile.prototype;
-  dart.addTypeTests(local_file.LocalFile);
-  dart.addTypeCaches(local_file.LocalFile);
-  dart.setMethodSignature(local_file.LocalFile, () => ({
-    __proto__: dart.getMethods(local_file.LocalFile.__proto__),
-    [_deleteSync$]: dart.fnType(dart.void, [], {recursive: core.bool}, {}),
-    [_delete$]: dart.fnType(async.Future$(io.FileSystemEntity), [], {recursive: core.bool}, {})
-  }));
-  dart.setGetterSignature(local_file.LocalFile, () => ({
-    __proto__: dart.getGetters(local_file.LocalFile.__proto__),
-    [_rawPath$]: typed_data.Uint8List,
-    [_path$]: core.String,
-    [_absolutePath$]: core.String
-  }));
-  dart.setLibraryUri(local_file.LocalFile, I[2]);
-  dart.defineExtensionMethods(local_file.LocalFile, ['toString']);
-  var _deleteSync$1 = dart.privateName(local_directory, "_deleteSync");
-  var _delete$1 = dart.privateName(local_directory, "_delete");
-  var _rawPath$1 = dart.privateName(local_directory, "_rawPath");
-  var _path$1 = dart.privateName(local_directory, "_path");
-  var _absolutePath$1 = dart.privateName(local_directory, "_absolutePath");
-  const LocalFileSystemEntity_ForwardingDirectory$36 = class LocalFileSystemEntity_ForwardingDirectory extends local_file_system_entity.LocalFileSystemEntity {};
-  (LocalFileSystemEntity_ForwardingDirectory$36.new = function(fileSystem, delegate) {
-    LocalFileSystemEntity_ForwardingDirectory$36.__proto__.new.call(this, fileSystem, delegate);
-  }).prototype = LocalFileSystemEntity_ForwardingDirectory$36.prototype;
-  const LocalFileSystemEntity_DirectoryAddOnsMixin$36 = class LocalFileSystemEntity_DirectoryAddOnsMixin extends LocalFileSystemEntity_ForwardingDirectory$36 {};
-  (LocalFileSystemEntity_DirectoryAddOnsMixin$36.new = function(fileSystem, delegate) {
-    LocalFileSystemEntity_DirectoryAddOnsMixin$36.__proto__.new.call(this, fileSystem, delegate);
-  }).prototype = LocalFileSystemEntity_DirectoryAddOnsMixin$36.prototype;
-  dart.applyMixin(LocalFileSystemEntity_DirectoryAddOnsMixin$36, common.DirectoryAddOnsMixin);
-  local_directory.LocalDirectory = class LocalDirectory extends LocalFileSystemEntity_DirectoryAddOnsMixin$36 {
-    toString() {
-      return "LocalDirectory: '" + this.path + "'";
-    }
-    [_deleteSync$](opts) {
-      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
-      return this[$noSuchMethod](new core._Invocation.method(C[11] || CT.C11, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive])));
-    }
-    [_delete$](opts) {
-      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
-      return T.FutureOfFileSystemEntity().as(this[$noSuchMethod](new core._Invocation.method(C[12] || CT.C12, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive]))));
-    }
-    get [_rawPath$]() {
-      return typed_data.Uint8List.as(this[$noSuchMethod](new core._Invocation.getter(C[13] || CT.C13)));
-    }
-    get [_path$]() {
-      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[14] || CT.C14)));
-    }
-    get [_absolutePath$]() {
-      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[15] || CT.C15)));
-    }
-  };
-  (local_directory.LocalDirectory.new = function(fs, delegate) {
-    local_directory.LocalDirectory.__proto__.new.call(this, fs, delegate);
-    ;
-  }).prototype = local_directory.LocalDirectory.prototype;
-  dart.addTypeTests(local_directory.LocalDirectory);
-  dart.addTypeCaches(local_directory.LocalDirectory);
-  dart.setMethodSignature(local_directory.LocalDirectory, () => ({
-    __proto__: dart.getMethods(local_directory.LocalDirectory.__proto__),
-    [_deleteSync$]: dart.fnType(dart.void, [], {recursive: core.bool}, {}),
-    [_delete$]: dart.fnType(async.Future$(io.FileSystemEntity), [], {recursive: core.bool}, {})
-  }));
-  dart.setGetterSignature(local_directory.LocalDirectory, () => ({
-    __proto__: dart.getGetters(local_directory.LocalDirectory.__proto__),
-    [_rawPath$]: typed_data.Uint8List,
-    [_path$]: core.String,
-    [_absolutePath$]: core.String
-  }));
-  dart.setLibraryUri(local_directory.LocalDirectory, I[3]);
-  dart.defineExtensionMethods(local_directory.LocalDirectory, ['toString']);
-  dart.setBaseClass(local_directory.LocalDirectory.__proto__.__proto__, local_file_system_entity.LocalFileSystemEntity$(local_directory.LocalDirectory, io.Directory));
-  dart.applyMixin(local_directory.LocalDirectory.__proto__.__proto__, forwarding_directory.ForwardingDirectory$(local_directory.LocalDirectory));
-  dart.trackLibraries("packages/file/src/backends/local/local_link.dart", {
-    "package:file/src/backends/local/local_link.dart": local_link,
-    "package:file/src/backends/local/local_file.dart": local_file,
-    "package:file/src/backends/local/local_file_system_entity.dart": local_file_system_entity,
-    "package:file/src/backends/local/local_directory.dart": local_directory
+  dart.trackLibraries("packages/characters/src/grapheme_clusters/table.dart", {
+    "package:characters/src/grapheme_clusters/table.dart": table
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["local_file_system_entity.dart","local_link.dart","local_file.dart","local_directory.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAoBmB;;;;;;MAGT;;;;;;;AAGc,cAAA,AAAW,AAAK,8BAAQ;MAAK;;AAG5B,cAAA,AAAW,AAAK,+BAAS;MAAK;oBAGhB;AACjC,sDAAe,iBAAY,QAAQ;MAAC;eAGlB;AAAa,4CAAU,iBAAY,QAAQ;MAAC;eAG5C;AAAa,4CAAU,iBAAY,QAAQ;MAAC;;0CAtBvC,YAAiB;MAAjB;MAAiB;;IAAS;;;;;;;;;;;;;;;;;;;;;0DAA1B,YAAiB;qEAAjB,YAAiB;;;;;ACCvB,YAAA,AAAoB,kBAAN,YAAI;IAAE;;;;;;;;;;;;;;;;;;;uCAHpB,IAAY;AAAY,kDAAM,EAAE,EAAE,QAAQ;;EAAC;;;;;;;;;;;;;;;;;;;;;;0DDErC,YAAiB;qEAAjB,YAAiB;;;;;AECvB,YAAA,AAAoB,kBAAN,YAAI;IAAE;;;;;;;;;;;;;;;;;;;uCAHpB,IAAY;AAAY,kDAAM,EAAE,EAAE,QAAQ;;EAAC;;;;;;;;;;;;;;;;;;;;;;+DFErC,YAAiB;0EAAjB,YAAiB;;;gEAAjB,YAAiB;2EAAjB,YAAiB;;;;;AGEvB,YAAA,AAAyB,uBAAN,YAAI;IAAE;;;;;;;;;;;;;;;;;;;iDAHpB,IAAiB;AAAY,4DAAM,EAAE,EAAE,QAAQ;;EAAC","file":"../../../../../../../../../../../../../packages/file/src/backends/local/local_link.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["table.dart"],"names":[],"mappings":";;;;;;;;;;;;2BA8TY;AACN,qBAAa,AAAO,0BAAW,AAAS,QAAD,cAAI;AAC3C,gBAAQ,AAAW,UAAD,IAAI,AAAS,QAAD,GAAG;AACjC,cAAM,AAAM,KAAD,GAAG;AACd,eAAO,AAAM,yBAAW,AAAM,KAAD,cAAI;AACrC,UAA0B,EAAlB,AAAK,AAAM,IAAP,cAAI,KAAK,CAAC,GAAG,GAAI,AAAK,AAAO,IAAR,GAAG,KAAQ,AAAI,GAAD,GAAG;EACpD;6BAEa,MAAU;AACjB,qBAAa,AAAO,0BAAW,AAAK,QAAG,AAAM,OAAE,IAAI;AACnD,gBAAQ,AAAW,UAAD,IAAI,AAAM,OAAE,IAAI;AAClC,cAAM,AAAM,KAAD,GAAG;AACd,eAAO,AAAM,yBAAW,AAAM,KAAD,cAAI;AACrC,UAA0B,EAAlB,AAAK,AAAM,IAAP,cAAI,KAAK,CAAC,GAAG,GAAI,AAAK,AAAO,IAAR,GAAG,KAAQ,AAAI,GAAD,GAAG;EACpD;6BAOa,OAAW;AACpB,UAAA,AAAc,kCAA0B,CAAd,AAAM,KAAD,GAAG,MAAQ,aAAa;EAAC;qCAQ3C,OAAW;AACxB,UAAA,AAAkB,sCAA0B,CAAd,AAAM,KAAD,GAAG,MAAQ,aAAa;EAAC;;MAlVnD,WAAK;;;MAwIL,YAAM;;;MA2Lb,mBAAa;;;MAQb,uBAAiB","file":"../../../../../../../../packages/characters/src/grapheme_clusters/table.dart.lib.js"}');
   // Exports:
   return {
-    src__backends__local__local_link: local_link,
-    src__backends__local__local_file: local_file,
-    src__backends__local__local_file_system_entity: local_file_system_entity,
-    src__backends__local__local_directory: local_directory
+    src__grapheme_clusters__table: table
   };
 }));
 
-//# sourceMappingURL=local_link.dart.lib.js.map
+//# sourceMappingURL=table.dart.lib.js.map

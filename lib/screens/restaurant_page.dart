@@ -24,7 +24,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
                     image: DecorationImage(
-                      image: AssetImage("assets/higtland1.jpg"),
+                      image: AssetImage("assets/hightland.jpg"),
                     ),
                   ),
                 ),

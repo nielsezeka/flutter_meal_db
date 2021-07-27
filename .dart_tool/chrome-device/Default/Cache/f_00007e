@@ -148,7 +148,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 28,
         [_Location_line]: 275,
-        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/cupertino/button.dart"
       });
     },
     get C16() {
@@ -181,7 +181,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 26,
         [_Location_line]: 273,
-        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/cupertino/button.dart"
       });
     },
     get C20() {
@@ -234,7 +234,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 24,
         [_Location_line]: 269,
-        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/cupertino/button.dart"
       });
     },
     get C26() {
@@ -267,7 +267,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 22,
         [_Location_line]: 265,
-        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/cupertino/button.dart"
       });
     },
     get C30() {
@@ -300,7 +300,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 20,
         [_Location_line]: 258,
-        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/cupertino/button.dart"
       });
     },
     get C34() {
@@ -333,7 +333,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 18,
         [_Location_line]: 256,
-        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/cupertino/button.dart"
       });
     },
     get C38() {
@@ -366,7 +366,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 16,
         [_Location_line]: 249,
-        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/cupertino/button.dart"
       });
     },
     get C42() {
@@ -399,7 +399,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 14,
         [_Location_line]: 247,
-        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/cupertino/button.dart"
       });
     },
     get C46() {
@@ -472,7 +472,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 241,
-        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/cupertino/button.dart"
       });
     },
     get C52() {
@@ -508,7 +508,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
   }, false);
   var C = Array(56).fill(void 0);
   var I = [
-    "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/packages/flutter/lib/src/cupertino/button.dart",
+    "file:///C:/flutter/packages/flutter/lib/src/cupertino/button.dart",
     "package:flutter/src/cupertino/button.dart"
   ];
   var child$ = dart.privateName(button, "CupertinoButton.child");
@@ -853,7 +853,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
   dart.trackLibraries("packages/flutter/src/cupertino/button.dart", {
     "package:flutter/src/cupertino/button.dart": button
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["button.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/flutter/src/cupertino/button.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["button.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA4Ee;;;;;;IAKa;;;;;;IAQb;;;;;;IAQD;;;;;;IAKQ;;;;;;IAMN;;;;;;IAOA;;;;;;IAKM;;;;;;IAUI;;;;;;IAEb;;;;;;;AAIS,YAAA,AAAU;IAAO;;AAGE;IAAuB;wBAGT;AACd,MAA/B,0BAAoB,UAAU;AACwC,MAA5E,AAAW,UAAD,KAAK,iCAAa,mBAAkB,uBAAkB;IAClE;;;QA/GO;QACS;QACT;QACA;QACA;QACA;QACA;QACA;QACA;QACS;;IARA;IACT;IACA;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAe,AAAQ,cAAT,YAA4B,aAAf,cAAc,KAAI,OAAsB,aAAf,cAAc,KAAI;UACtE,AAAc,aAAD;UACb,AAAU,SAAD;IACR,gBAAE;AACV,0DAAW,GAAG;;EAAC;;QASb;QACS;QACT;QACA;QACA;QACA;QACA;QACA;QACS;;IAPA;IACT;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAe,AAAQ,cAAT,YAA4B,aAAf,cAAc,KAAI,OAAsB,aAAf,cAAc,KAAI;UACtE,AAAc,aAAD;UACb,AAAU,SAAD;IACV,eAAE;IACA,gBAAE;AACV,0DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmFK;;IAAoB;;AAApB;IAAoB;;;AACtB;;IAAiB;;AAAjB;IAAiB;;AAIrB,MAAX;AAKL,MAJD,6BAAuB,kFAEd,YACA;AAIc,MAFvB,0BAAoB,AACjB,AACA,8CADM,iCAAyB,+CACzB;AACE,MAAX;IACF;;gCAGqC;AACT,MAApB,sBAAgB,GAAG;AACd,MAAX;IACF;;;AAGkD,MAAhD,AAAc,2BAA4B,KAAtB,AAAO,4BAAA,aAAkB;IAC/C;;AAIgC,MAA9B,AAAqB;AACN,MAAT;IACR;qBAImC;AACjC,WAAK;AACmB,QAAtB,wBAAkB;AACR,QAAV;;IAEJ;mBAE+B;AAC7B,UAAI;AACqB,QAAvB,wBAAkB;AACR,QAAV;;IAEJ;;AAGE,UAAI;AACqB,QAAvB,wBAAkB;AACR,QAAV;;IAEJ;;AAGE,UAAI,AAAqB,wCACvB;AACS,wBAAc;AACN,mBAAS,wBACtB,AAAqB,qCAAU,gBAAe,kDAC9C,AAAqB,qCAAU,gBAAe;AAIlD,MAHF,AAAO,MAAD,iBAAY,QAAM;AACtB,YAAI,gBAAW,WAAW,KAAI,uBAC5B,AAAU;;IAEhB;UAG0B;;AACb,oBAAU,AAAO;AACH,sBAA2B,wBAAG,OAAO;AAClD,yBAAe,AAAU,SAAD;AACvB,4BAAkB,AAAO,AAAM,4BACvC,AAAO,wBAAU,YAAY,GAAG,OACX,0CAAa,AAAO,mBAAO,OAAO;AAEhD,4BAAkB,AAAgB,eAAD,WACzC,AAAU,SAAD,2BACT,OAAO,GACL,YAAY,GACU,qCAAwB,wCAAiB,OAAO;AAE5D,sBAAY,AAAU,AAAU,AAAU,SAArB,sCAAqC,eAAe;AAEzF,YAAO,qDACqB,6CACf,OAAO,aAAG,wBAAiB,eAC7B,OAAO,aAAG,sBAAe,mBACrB,OAAO,aAAG,0BAAmB,aACnC,AAAO,8BACP,iCACG,aACD,2CACQ,AAAO,AAAQ,8CAExB,sCAC0B,eAAd,AAAO,iCACQ,eAAd,AAAO,+BAEjB,6CACI,gCACF,4CACO,oDACI,AAAO,iCACd,AAAwB,eAAT,aAAa,OAAO,GAChB,qCAAQ,AAAO,2BAAe,OAAO,IAC3D,eAAe,WAEd,iCACmB,KAAf,AAAO,qBAAA,aAAY,AAAgB,eAAD,WACvC,mCACA,qCACG,gCACM,AAAO,oCACL,mBACC,YACP,sCACE,SAAS,SACT,oCACC,8CAAqB,eAAe,WACnC,AAAO;IAUlC;;;IAtIoB,sBAAgB,oCAAqB;yDAEhC;sDACF;IAgClB,wBAAkB;;;EAoGzB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAzIwB,6CAAgB;;;MAChB,4CAAe;;;;;;;;;MA3ItB,sBAAe;;;MACf,gCAAyB","file":"../../../../../../packages/flutter/src/cupertino/button.dart.lib.js"}');
   // Exports:
   return {
     src__cupertino__button: button

@@ -19,16 +19,16 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "o3GFecYo+iWb9JrgjEP09w==";
+    window.$dartAppId = "pIimsq2jpwkOcGw3ARTs5A==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "11.0.2";
-window.$dwdsDevHandlerPath = "http://localhost:54541/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:56756/$dwdsSseHandler";
 window.$dwdsEnableDevtoolsLaunch = true;
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:54545/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:56758/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -493,6 +493,8 @@ let modulePaths = {
  "packages/theme_provider/src/data/app_theme_options.dart": "packages/theme_provider/src/data/app_theme_options.dart.lib",
  "packages/flutter_meal_db/screens/home_page.dart": "packages/flutter_meal_db/screens/home_page.dart.lib",
  "packages/flutter_meal_db/screens/restaurant_page.dart": "packages/flutter_meal_db/screens/restaurant_page.dart.lib",
+ "packages/flutter_meal_db/screens/food_item_page.dart": "packages/flutter_meal_db/screens/food_item_page.dart.lib",
+ "packages/flutter_meal_db/screens/thankyou_page.dart": "packages/flutter_meal_db/screens/thankyou_page.dart.lib",
  "packages/flutter_meal_db/screens/home_page_restaurant_modelstest.dart": "packages/flutter_meal_db/screens/home_page_restaurant_modelstest.dart.lib",
  "packages/flutter_meal_db/constants/routing.dart": "packages/flutter_meal_db/constants/routing.dart.lib"
 };
@@ -909,6 +911,8 @@ let moduleNames = {
  "packages/theme_provider/src/data/app_theme_options.dart.lib": "packages/theme_provider/src/data/app_theme_options.dart",
  "packages/flutter_meal_db/screens/home_page.dart.lib": "packages/flutter_meal_db/screens/home_page.dart",
  "packages/flutter_meal_db/screens/restaurant_page.dart.lib": "packages/flutter_meal_db/screens/restaurant_page.dart",
+ "packages/flutter_meal_db/screens/food_item_page.dart.lib": "packages/flutter_meal_db/screens/food_item_page.dart",
+ "packages/flutter_meal_db/screens/thankyou_page.dart.lib": "packages/flutter_meal_db/screens/thankyou_page.dart",
  "packages/flutter_meal_db/screens/home_page_restaurant_modelstest.dart.lib": "packages/flutter_meal_db/screens/home_page_restaurant_modelstest.dart",
  "packages/flutter_meal_db/constants/routing.dart.lib": "packages/flutter_meal_db/constants/routing.dart"
 };
