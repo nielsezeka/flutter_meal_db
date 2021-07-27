@@ -38,7 +38,44 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
                   },
-                  child: Icon(Icons.play_arrow))
+                  child: Icon(Icons.play_arrow)),
+              Container(
+                color: Theme.of(context).primaryColor,
+                height: 100,
+                child: Row(
+                  children: [
+                    Container(
+                      color: Theme.of(context).primaryColor,
+                      height: 60,
+                      width: 300,
+                      child: TextField(
+                        decoration: InputDecoration(
+                            prefixIcon: Icon(
+                              Icons.search,
+                              color: Theme.of(context).accentColor,
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            hintStyle: TextStyle(
+                              color: Theme.of(context).accentColor,
+                            ),
+                            hintText: 'What Do You Want Oder ?'),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.control_point),
+                          color: Theme.of(context).accentColor,
+                          iconSize: 30,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
