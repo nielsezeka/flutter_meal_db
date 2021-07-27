@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_meal_db/screens/home_page_restaurant_modelstest.dart';
-import 'package:flutter_meal_db/screens/restaurant_page.dart';
+import 'package:flutter_meal_db/screens/food_item_page.dart';
 import 'package:theme_provider/theme_provider.dart';
+
+import 'restaurant_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -161,35 +163,46 @@ class _HomePageState extends State<HomePage> {
           itemCount: restaurant.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 150,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(restaurant[index].imageURLFile),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ],
+            return InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RestaurantPage(),
                   ),
-                ),
-                Text(
-                  restaurant[index].name,
-                  style: TextStyle(
-                      color: Theme.of(context).accentColor,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
+                );
+              },
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 150,
+                          width: 150,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image:
+                                  NetworkImage(restaurant[index].imageURLFile),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Text(
+                    restaurant[index].name,
+                    style: TextStyle(
+                        color: Theme.of(context).accentColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             );
           }),
     );
@@ -319,7 +332,7 @@ class _HomePageState extends State<HomePage> {
             width: 50,
             height: 50,
             decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).accentColor,
                 borderRadius: BorderRadius.circular(10)),
             child: IconButton(
               onPressed: () {},
