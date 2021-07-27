@@ -1,0 +1,1258 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/flutter/src/material/button_bar.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/material/circle_avatar.dart', 'packages/flutter/src/widgets/implicit_animations.dart', 'packages/theme_provider/src/controller/shared_preferences_adapter.dart', 'packages/flutter/src/foundation/change_notifier.dart', 'packages/theme_provider/src/controller/save_adapter.dart', 'packages/flutter/src/material/colors.dart', 'packages/theme_provider/src/data/app_theme_options.dart'], (function load__packages__theme_provider__src__widgets__theme_dialog_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__flutter__src__material__button_bar$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__material__circle_avatar$46dart, packages__flutter__src__widgets__implicit_animations$46dart, packages__theme_provider__src__controller__shared_preferences_adapter$46dart, packages__flutter__src__foundation__change_notifier$46dart, packages__theme_provider__src__controller__save_adapter$46dart, packages__flutter__src__material__colors$46dart, packages__theme_provider__src__data__app_theme_options$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const inherited_notifier = packages__flutter__src__widgets__widget_span$46dart.src__widgets__inherited_notifier;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  const dialog = packages__flutter__src__material__button_bar$46dart.src__material__dialog;
+  const list_tile = packages__flutter__src__material__icon_button$46dart.src__material__list_tile;
+  const icon_button = packages__flutter__src__material__icon_button$46dart.src__material__icon_button;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const theme_data = packages__flutter__src__material__icon_button$46dart.src__material__theme_data;
+  const circle_avatar = packages__flutter__src__material__circle_avatar$46dart.src__material__circle_avatar;
+  const implicit_animations = packages__flutter__src__widgets__implicit_animations$46dart.src__widgets__implicit_animations;
+  const shared_preferences_adapter = packages__theme_provider__src__controller__shared_preferences_adapter$46dart.src__controller__shared_preferences_adapter;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  const save_adapter = packages__theme_provider__src__controller__save_adapter$46dart.src__controller__save_adapter;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const app_theme_options = packages__theme_provider__src__data__app_theme_options$46dart.src__data__app_theme_options;
+  var theme_dialog = Object.create(dart.library);
+  var cycle_theme_icon_button = Object.create(dart.library);
+  var theme_consumer = Object.create(dart.library);
+  var inherited_theme = Object.create(dart.library);
+  var theme_controller = Object.create(dart.library);
+  var theme_provider = Object.create(dart.library);
+  var app_theme = Object.create(dart.library);
+  var theme_provider$ = Object.create(dart.library);
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $toUpperCase = dartx.toUpperCase;
+  var $_get = dartx._get;
+  var $substring = dartx.substring;
+  var $split = dartx.split;
+  var $join = dartx.join;
+  var $containsKey = dartx.containsKey;
+  var $_set = dartx._set;
+  var $add = dartx.add;
+  var $indexOf = dartx.indexOf;
+  var $modulo = dartx['%'];
+  var $length = dartx.length;
+  var $remove = dartx.remove;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $toLowerCase = dartx.toLowerCase;
+  var $contains = dartx.contains;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    AppThemeToWidget: () => (T.AppThemeToWidget = dart.constFn(dart.fnType(framework.Widget, [app_theme.AppTheme])))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    LinkedMapOfString$AppTheme: () => (T.LinkedMapOfString$AppTheme = dart.constFn(_js_helper.LinkedMap$(core.String, app_theme.AppTheme)))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    AppThemeAndAppThemeTovoid: () => (T.AppThemeAndAppThemeTovoid = dart.constFn(dart.fnType(dart.void, [app_theme.AppTheme, app_theme.AppTheme])))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    StringNToNull: () => (T.StringNToNull = dart.constFn(dart.fnType(core.Null, [T.StringN()])))(),
+    StringToAppTheme: () => (T.StringToAppTheme = dart.constFn(dart.fnType(app_theme.AppTheme, [core.String])))(),
+    JSArrayOfAppTheme: () => (T.JSArrayOfAppTheme = dart.constFn(_interceptors.JSArray$(app_theme.AppTheme)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 29,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3], widget_inspector._Location);
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[2] || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[1] || CT.C1,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "Select Theme"
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 1721671326
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 47,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 54,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9], widget_inspector._Location);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 60,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294967295.0
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 57686
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C[6] || CT.C6,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: C[10] || CT.C10,
+        [Icon_size]: null,
+        [Icon_icon]: C[11] || CT.C11
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 7,
+        [_Location_line]: 70,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 69,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 15,
+        [_Location_line]: 106,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "radius",
+        [_Location_column]: 15,
+        [_Location_line]: 108,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19], widget_inspector._Location);
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 105,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 13,
+        [_Location_line]: 102,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 105,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22, C[23] || CT.C23], widget_inspector._Location);
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 101,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 15,
+        [_Location_line]: 115,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 116,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27], widget_inspector._Location);
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 114,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "duration",
+        [_Location_column]: 13,
+        [_Location_line]: 112,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "opacity",
+        [_Location_column]: 13,
+        [_Location_line]: 113,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 114,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30, C[31] || CT.C31, C[32] || CT.C32], widget_inspector._Location);
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 111,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 100,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.constList([C[35] || CT.C35], widget_inspector._Location);
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[34] || CT.C34,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 99,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 19,
+        [_Location_line]: 121,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.constList([C[38] || CT.C38], widget_inspector._Location);
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[37] || CT.C37,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 121,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 45,
+        [_Location_line]: 122,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.constList([C[41] || CT.C41], widget_inspector._Location);
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[40] || CT.C40,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 122,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "leading",
+        [_Location_column]: 7,
+        [_Location_line]: 99,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 7,
+        [_Location_line]: 121,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "subtitle",
+        [_Location_column]: 7,
+        [_Location_line]: 122,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 7,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44, C[45] || CT.C45, C[46] || CT.C46, C[47] || CT.C47], widget_inspector._Location);
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 98,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 58475
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 18,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51], widget_inspector._Location);
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/cycle_theme_icon_button.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 7,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 7,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.constList([C[54] || CT.C54, C[55] || CT.C55], widget_inspector._Location);
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[53] || CT.C53,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 15,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/cycle_theme_icon_button.dart"
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 7,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.constList([C[58] || CT.C58, C[59] || CT.C59], widget_inspector._Location);
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[57] || CT.C57,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/provider/theme_consumer.dart"
+      });
+    },
+    get C60() {
+      return C[60] = dart.fn(theme_controller.ThemeController._defaultOnThemeChanged, T.AppThemeAndAppThemeTovoid());
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 7,
+        [_Location_line]: 90,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 99,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.constList([C[63] || CT.C63, C[64] || CT.C64], widget_inspector._Location);
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[62] || CT.C62,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 89,
+        [_Location_file]: "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/provider/theme_provider.dart"
+      });
+    }
+  }, false);
+  var C = Array(65).fill(void 0);
+  var I = [
+    "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/widgets/theme_dialog.dart",
+    "package:theme_provider/src/widgets/theme_dialog.dart",
+    "package:theme_provider/src/widgets/cycle_theme_icon_button.dart",
+    "package:theme_provider/src/provider/theme_consumer.dart",
+    "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/provider/inherited_theme.dart",
+    "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/controller/theme_controller.dart",
+    "package:theme_provider/src/controller/theme_controller.dart",
+    "package:theme_provider/src/provider/inherited_theme.dart",
+    "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/provider/theme_provider.dart",
+    "package:theme_provider/src/provider/theme_provider.dart",
+    "file:///C:/Users/DungIT/Downloads/flutter_windows_2.0.6-stable/flutter/.pub-cache/hosted/pub.dartlang.org/theme_provider-0.5.0/lib/src/data/app_theme.dart",
+    "package:theme_provider/src/data/app_theme.dart"
+  ];
+  var title$ = dart.privateName(theme_dialog, "ThemeDialog.title");
+  var hasDescription$ = dart.privateName(theme_dialog, "ThemeDialog.hasDescription");
+  var innerCircleRadius$ = dart.privateName(theme_dialog, "ThemeDialog.innerCircleRadius");
+  var innerCircleColorBuilder$ = dart.privateName(theme_dialog, "ThemeDialog.innerCircleColorBuilder");
+  var outerCircleColorBuilder$ = dart.privateName(theme_dialog, "ThemeDialog.outerCircleColorBuilder");
+  var animatedOpacityDuration$ = dart.privateName(theme_dialog, "ThemeDialog.animatedOpacityDuration");
+  var selectedThemeIcon$ = dart.privateName(theme_dialog, "ThemeDialog.selectedThemeIcon");
+  var selectedOverlayColor$ = dart.privateName(theme_dialog, "ThemeDialog.selectedOverlayColor");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var Text_textHeightBehavior = dart.privateName(text, "Text.textHeightBehavior");
+  var Text_textWidthBasis = dart.privateName(text, "Text.textWidthBasis");
+  var Text_semanticsLabel = dart.privateName(text, "Text.semanticsLabel");
+  var Text_maxLines = dart.privateName(text, "Text.maxLines");
+  var Text_textScaleFactor = dart.privateName(text, "Text.textScaleFactor");
+  var Text_overflow = dart.privateName(text, "Text.overflow");
+  var Text_softWrap = dart.privateName(text, "Text.softWrap");
+  var Text_locale = dart.privateName(text, "Text.locale");
+  var Text_textDirection = dart.privateName(text, "Text.textDirection");
+  var Text_textAlign = dart.privateName(text, "Text.textAlign");
+  var Text_strutStyle = dart.privateName(text, "Text.strutStyle");
+  var Text_style = dart.privateName(text, "Text.style");
+  var Text_textSpan = dart.privateName(text, "Text.textSpan");
+  var Text_data = dart.privateName(text, "Text.data");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var Icon_textDirection = dart.privateName(icon, "Icon.textDirection");
+  var Icon_semanticLabel = dart.privateName(icon, "Icon.semanticLabel");
+  var Icon_color = dart.privateName(icon, "Icon.color");
+  var Icon_size = dart.privateName(icon, "Icon.size");
+  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
+  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
+  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
+  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
+  var Icon_icon = dart.privateName(icon, "Icon.icon");
+  var _buildThemeTile = dart.privateName(theme_dialog, "_buildThemeTile");
+  var _capitalize = dart.privateName(theme_dialog, "_capitalize");
+  theme_dialog.ThemeDialog = class ThemeDialog extends framework.StatelessWidget {
+    get title() {
+      return this[title$];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    get hasDescription() {
+      return this[hasDescription$];
+    }
+    set hasDescription(value) {
+      super.hasDescription = value;
+    }
+    get innerCircleRadius() {
+      return this[innerCircleRadius$];
+    }
+    set innerCircleRadius(value) {
+      super.innerCircleRadius = value;
+    }
+    get innerCircleColorBuilder() {
+      return this[innerCircleColorBuilder$];
+    }
+    set innerCircleColorBuilder(value) {
+      super.innerCircleColorBuilder = value;
+    }
+    get outerCircleColorBuilder() {
+      return this[outerCircleColorBuilder$];
+    }
+    set outerCircleColorBuilder(value) {
+      super.outerCircleColorBuilder = value;
+    }
+    get animatedOpacityDuration() {
+      return this[animatedOpacityDuration$];
+    }
+    set animatedOpacityDuration(value) {
+      super.animatedOpacityDuration = value;
+    }
+    get selectedThemeIcon() {
+      return this[selectedThemeIcon$];
+    }
+    set selectedThemeIcon(value) {
+      super.selectedThemeIcon = value;
+    }
+    get selectedOverlayColor() {
+      return this[selectedOverlayColor$];
+    }
+    set selectedOverlayColor(value) {
+      super.selectedOverlayColor = value;
+    }
+    build(context) {
+      let currentThemeId = theme_provider.ThemeProvider.themeOf(context).id;
+      return new dialog.SimpleDialog.new({title: this.title, children: theme_provider.ThemeProvider.controllerOf(context).allThemes[$map](framework.Widget, dart.fn(theme => this[_buildThemeTile](context, theme, currentThemeId), T.AppThemeToWidget()))[$toList](), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12});
+    }
+    [_capitalize](s) {
+      if (s.length === 0) {
+        return s;
+      } else if (s.length === 1) {
+        return s[$toUpperCase]();
+      } else {
+        return s[$_get](0)[$toUpperCase]() + s[$substring](1);
+      }
+    }
+    [_buildThemeTile](context, theme, currentThemeId) {
+      let t0, t0$;
+      let themeName = theme.id[$split]("_")[$map](core.String, dart.bind(this, _capitalize))[$join](" ");
+      return new list_tile.ListTile.new({leading: new basic.Stack.new({children: T.JSArrayOfWidget().of([new circle_avatar.CircleAvatar.new({backgroundColor: this.outerCircleColorBuilder != null ? dart.nullCheck(this.outerCircleColorBuilder)(theme) : theme.data.accentColor, child: new circle_avatar.CircleAvatar.new({backgroundColor: (t0$ = (t0 = this.innerCircleColorBuilder, t0 == null ? null : t0(theme)), t0$ == null ? theme.data.primaryColor : t0$), radius: this.innerCircleRadius, $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), $creationLocationd_0dea112b090073317d4: C[20] || CT.C20}), new implicit_animations.AnimatedOpacity.new({duration: new core.Duration.new({milliseconds: this.animatedOpacityDuration}), opacity: theme.id === currentThemeId ? 1.0 : 0.0, child: new circle_avatar.CircleAvatar.new({backgroundColor: this.selectedOverlayColor, child: this.selectedThemeIcon, $creationLocationd_0dea112b090073317d4: C[24] || CT.C24}), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28})]), $creationLocationd_0dea112b090073317d4: C[33] || CT.C33}), title: new text.Text.new(themeName, {$creationLocationd_0dea112b090073317d4: C[36] || CT.C36}), subtitle: this.hasDescription ? new text.Text.new(theme.description, {$creationLocationd_0dea112b090073317d4: C[39] || CT.C39}) : null, onTap: dart.fn(() => theme_provider.ThemeProvider.controllerOf(context).setTheme(theme.id), T.VoidTovoid()), $creationLocationd_0dea112b090073317d4: C[42] || CT.C42});
+    }
+  };
+  (theme_dialog.ThemeDialog.new = function(opts) {
+    let title = opts && 'title' in opts ? opts.title : C[0] || CT.C0;
+    let hasDescription = opts && 'hasDescription' in opts ? opts.hasDescription : true;
+    let innerCircleRadius = opts && 'innerCircleRadius' in opts ? opts.innerCircleRadius : 15;
+    let innerCircleColorBuilder = opts && 'innerCircleColorBuilder' in opts ? opts.innerCircleColorBuilder : null;
+    let outerCircleColorBuilder = opts && 'outerCircleColorBuilder' in opts ? opts.outerCircleColorBuilder : null;
+    let animatedOpacityDuration = opts && 'animatedOpacityDuration' in opts ? opts.animatedOpacityDuration : 200;
+    let selectedOverlayColor = opts && 'selectedOverlayColor' in opts ? opts.selectedOverlayColor : C[4] || CT.C4;
+    let selectedThemeIcon = opts && 'selectedThemeIcon' in opts ? opts.selectedThemeIcon : C[5] || CT.C5;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[title$] = title;
+    this[hasDescription$] = hasDescription;
+    this[innerCircleRadius$] = innerCircleRadius;
+    this[innerCircleColorBuilder$] = innerCircleColorBuilder;
+    this[outerCircleColorBuilder$] = outerCircleColorBuilder;
+    this[animatedOpacityDuration$] = animatedOpacityDuration;
+    this[selectedOverlayColor$] = selectedOverlayColor;
+    this[selectedThemeIcon$] = selectedThemeIcon;
+    theme_dialog.ThemeDialog.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    if (!(this.innerCircleRadius <= 20)) dart.assertFailed("Inner circle max radius exceeds is 20px", I[0], 62, 12, "innerCircleRadius <= 20");
+  }).prototype = theme_dialog.ThemeDialog.prototype;
+  dart.addTypeTests(theme_dialog.ThemeDialog);
+  dart.addTypeCaches(theme_dialog.ThemeDialog);
+  dart.setMethodSignature(theme_dialog.ThemeDialog, () => ({
+    __proto__: dart.getMethods(theme_dialog.ThemeDialog.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_capitalize]: dart.fnType(core.String, [core.String]),
+    [_buildThemeTile]: dart.fnType(framework.Widget, [framework.BuildContext, app_theme.AppTheme, core.String])
+  }));
+  dart.setLibraryUri(theme_dialog.ThemeDialog, I[1]);
+  dart.setFieldSignature(theme_dialog.ThemeDialog, () => ({
+    __proto__: dart.getFields(theme_dialog.ThemeDialog.__proto__),
+    title: dart.finalFieldType(framework.Widget),
+    hasDescription: dart.finalFieldType(core.bool),
+    innerCircleRadius: dart.finalFieldType(core.double),
+    innerCircleColorBuilder: dart.finalFieldType(dart.nullable(dart.fnType(ui.Color, [app_theme.AppTheme]))),
+    outerCircleColorBuilder: dart.finalFieldType(dart.nullable(dart.fnType(ui.Color, [app_theme.AppTheme]))),
+    animatedOpacityDuration: dart.finalFieldType(core.int),
+    selectedThemeIcon: dart.finalFieldType(framework.Widget),
+    selectedOverlayColor: dart.finalFieldType(ui.Color)
+  }));
+  var icon$ = dart.privateName(cycle_theme_icon_button, "CycleThemeIconButton.icon");
+  cycle_theme_icon_button.CycleThemeIconButton = class CycleThemeIconButton extends framework.StatelessWidget {
+    get icon() {
+      return this[icon$];
+    }
+    set icon(value) {
+      super.icon = value;
+    }
+    build(context) {
+      return new icon_button.IconButton.new({icon: new icon.Icon.new(this.icon, {$creationLocationd_0dea112b090073317d4: C[49] || CT.C49}), onPressed: dart.bind(theme_provider.ThemeProvider.controllerOf(context), 'nextTheme'), $creationLocationd_0dea112b090073317d4: C[52] || CT.C52});
+    }
+  };
+  (cycle_theme_icon_button.CycleThemeIconButton.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let icon = opts && 'icon' in opts ? opts.icon : C[48] || CT.C48;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[icon$] = icon;
+    cycle_theme_icon_button.CycleThemeIconButton.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = cycle_theme_icon_button.CycleThemeIconButton.prototype;
+  dart.addTypeTests(cycle_theme_icon_button.CycleThemeIconButton);
+  dart.addTypeCaches(cycle_theme_icon_button.CycleThemeIconButton);
+  dart.setMethodSignature(cycle_theme_icon_button.CycleThemeIconButton, () => ({
+    __proto__: dart.getMethods(cycle_theme_icon_button.CycleThemeIconButton.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(cycle_theme_icon_button.CycleThemeIconButton, I[2]);
+  dart.setFieldSignature(cycle_theme_icon_button.CycleThemeIconButton, () => ({
+    __proto__: dart.getFields(cycle_theme_icon_button.CycleThemeIconButton.__proto__),
+    icon: dart.finalFieldType(icon_data.IconData)
+  }));
+  var child$ = dart.privateName(theme_consumer, "ThemeConsumer.child");
+  theme_consumer.ThemeConsumer = class ThemeConsumer extends framework.StatelessWidget {
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    build(context) {
+      return new theme.Theme.new({data: theme_provider.ThemeProvider.themeOf(context).data, child: this.child, $creationLocationd_0dea112b090073317d4: C[56] || CT.C56});
+    }
+  };
+  (theme_consumer.ThemeConsumer.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[child$] = child;
+    theme_consumer.ThemeConsumer.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = theme_consumer.ThemeConsumer.prototype;
+  dart.addTypeTests(theme_consumer.ThemeConsumer);
+  dart.addTypeCaches(theme_consumer.ThemeConsumer);
+  dart.setMethodSignature(theme_consumer.ThemeConsumer, () => ({
+    __proto__: dart.getMethods(theme_consumer.ThemeConsumer.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(theme_consumer.ThemeConsumer, I[3]);
+  dart.setFieldSignature(theme_consumer.ThemeConsumer, () => ({
+    __proto__: dart.getFields(theme_consumer.ThemeConsumer.__proto__),
+    child: dart.finalFieldType(framework.Widget)
+  }));
+  var controller$ = dart.privateName(inherited_theme, "InheritedThemeController.controller");
+  var _appThemes = dart.privateName(theme_controller, "_appThemes");
+  var _appThemeIds = dart.privateName(theme_controller, "_appThemeIds");
+  var _saveAdapter = dart.privateName(theme_controller, "_saveAdapter");
+  var _saveThemesOnChange = dart.privateName(theme_controller, "_saveThemesOnChange");
+  var _loadThemeOnInit = dart.privateName(theme_controller, "_loadThemeOnInit");
+  var _providerId = dart.privateName(theme_controller, "_providerId");
+  var _onThemeChanged = dart.privateName(theme_controller, "_onThemeChanged");
+  var _currentThemeIndex = dart.privateName(theme_controller, "_currentThemeIndex");
+  var _getPreviousSavedTheme = dart.privateName(theme_controller, "_getPreviousSavedTheme");
+  var _setThemeByIndex = dart.privateName(theme_controller, "_setThemeByIndex");
+  theme_controller.ThemeController = class ThemeController extends change_notifier.ChangeNotifier {
+    [_getPreviousSavedTheme]() {
+      return async.async(T.StringN(), (function* _getPreviousSavedTheme() {
+        let savedTheme = (yield this[_saveAdapter].loadTheme(this[_providerId]));
+        if (savedTheme != null && this[_appThemes][$containsKey](savedTheme)) {
+          return savedTheme;
+        }
+        return null;
+      }).bind(this));
+    }
+    [_setThemeByIndex](themeIndex) {
+      let t1, t0;
+      let _oldThemeIndex = this[_currentThemeIndex];
+      this[_currentThemeIndex] = themeIndex;
+      this.notifyListeners();
+      if (this[_saveThemesOnChange]) {
+        this.saveThemeToDisk();
+      }
+      let oldTheme = this[_appThemes][$_get](this[_appThemeIds][$_get](_oldThemeIndex));
+      let currentTheme = this[_appThemes][$_get](this[_appThemeIds][$_get](this[_currentThemeIndex]));
+      if (!(oldTheme != null && currentTheme != null)) dart.assertFailed("Old theme/Current theme referenced to null values.", I[5], 131, 12, "oldTheme != null && currentTheme != null");
+      if (oldTheme != null && currentTheme != null) {
+        t0 = oldTheme;
+        t1 = currentTheme;
+        this[_onThemeChanged](t0, t1);
+      }
+    }
+    get theme() {
+      return dart.nullCheck(this[_appThemes][$_get](this.currentThemeId));
+    }
+    get currentThemeId() {
+      return this[_appThemeIds][$_get](this[_currentThemeIndex]);
+    }
+    get providerId() {
+      return this[_providerId];
+    }
+    nextTheme() {
+      let nextThemeIndex = (this[_currentThemeIndex] + 1)[$modulo](this[_appThemes][$length]);
+      this[_setThemeByIndex](nextThemeIndex);
+    }
+    setTheme(themeId) {
+      if (!this[_appThemes][$containsKey](themeId)) dart.assertFailed(null, I[5], 160, 12, "_appThemes.containsKey(themeId)");
+      let themeIndex = this[_appThemeIds][$indexOf](themeId);
+      this[_setThemeByIndex](themeIndex);
+    }
+    loadThemeFromDisk() {
+      return async.async(dart.void, (function* loadThemeFromDisk() {
+        let savedTheme = (yield this[_getPreviousSavedTheme]());
+        if (savedTheme != null) {
+          this.setTheme(savedTheme);
+        }
+      }).bind(this));
+    }
+    saveThemeToDisk() {
+      return async.async(dart.void, (function* saveThemeToDisk() {
+        this[_saveAdapter].saveTheme(this[_providerId], this.currentThemeId);
+      }).bind(this));
+    }
+    get allThemes() {
+      return this[_appThemeIds][$map](app_theme.AppTheme, dart.fn(id => dart.nullCheck(this[_appThemes][$_get](id)), T.StringToAppTheme()))[$toList]();
+    }
+    hasTheme(themeId) {
+      return this[_appThemes][$containsKey](themeId);
+    }
+    addTheme(newTheme) {
+      if (this.hasTheme(newTheme.id)) {
+        dart.throw(core.Exception.new(newTheme.id + " is already being used as a theme."));
+      }
+      this[_appThemes][$_set](newTheme.id, newTheme);
+      this[_appThemeIds][$add](newTheme.id);
+      this.notifyListeners();
+    }
+    removeTheme(themeId) {
+      if (!this.hasTheme(themeId)) {
+        dart.throw(core.Exception.new(themeId + " does not exist."));
+      }
+      if (this.currentThemeId === themeId) {
+        dart.throw(core.Exception.new(themeId + " is set as current theme."));
+      }
+      this[_appThemes][$remove](themeId);
+      this[_appThemeIds][$remove](themeId);
+      this.notifyListeners();
+    }
+    forgetSavedTheme() {
+      return async.async(dart.void, (function* forgetSavedTheme() {
+        yield this[_saveAdapter].forgetTheme(this.providerId);
+      }).bind(this));
+    }
+    static _defaultOnThemeChanged(oldTheme, newTheme) {
+    }
+  };
+  (theme_controller.ThemeController.new = function(opts) {
+    let t0;
+    let providerId = opts && 'providerId' in opts ? opts.providerId : null;
+    let themes = opts && 'themes' in opts ? opts.themes : null;
+    let defaultThemeId = opts && 'defaultThemeId' in opts ? opts.defaultThemeId : null;
+    let saveThemesOnChange = opts && 'saveThemesOnChange' in opts ? opts.saveThemesOnChange : null;
+    let loadThemeOnInit = opts && 'loadThemeOnInit' in opts ? opts.loadThemeOnInit : null;
+    let onThemeChanged = opts && 'onThemeChanged' in opts ? opts.onThemeChanged : null;
+    let onInitCallback = opts && 'onInitCallback' in opts ? opts.onInitCallback : null;
+    this[_appThemes] = new (T.LinkedMapOfString$AppTheme()).new();
+    this[_appThemeIds] = T.JSArrayOfString().of([]);
+    this[_saveAdapter] = new shared_preferences_adapter.SharedPreferenceAdapter.new();
+    this[_saveThemesOnChange] = saveThemesOnChange;
+    this[_loadThemeOnInit] = loadThemeOnInit;
+    this[_providerId] = providerId;
+    this[_onThemeChanged] = (t0 = onThemeChanged, t0 == null ? C[60] || CT.C60 : t0);
+    this[_currentThemeIndex] = 0;
+    theme_controller.ThemeController.__proto__.new.call(this);
+    for (let theme of themes) {
+      if (!!this[_appThemes][$containsKey](theme.id)) dart.assertFailed("Conflicting theme ids found: " + theme.id + " is already added to the widget tree,", I[5], 83, 11, "!_appThemes.containsKey(theme.id)");
+      this[_appThemes][$_set](theme.id, theme);
+      this[_appThemeIds][$add](theme.id);
+    }
+    if (defaultThemeId != null) {
+      this[_currentThemeIndex] = this[_appThemeIds][$indexOf](defaultThemeId);
+      if (!(this[_currentThemeIndex] !== -1)) dart.assertFailed("No app theme with the default theme id: " + dart.str(defaultThemeId), I[5], 92, 14, "_currentThemeIndex != -1");
+    }
+    if (!!(onInitCallback != null && this[_loadThemeOnInit])) dart.assertFailed("Cannot set both onInitCallback and loadThemeOnInit", I[5], 96, 12, "!(onInitCallback != null && _loadThemeOnInit)");
+    if (this[_loadThemeOnInit]) {
+      this[_getPreviousSavedTheme]().then(core.Null, dart.fn(savedTheme => {
+        if (savedTheme != null) this.setTheme(savedTheme);
+      }, T.StringNToNull()));
+    } else if (onInitCallback != null) {
+      onInitCallback(this, this[_getPreviousSavedTheme]());
+    }
+  }).prototype = theme_controller.ThemeController.prototype;
+  dart.addTypeTests(theme_controller.ThemeController);
+  dart.addTypeCaches(theme_controller.ThemeController);
+  dart.setMethodSignature(theme_controller.ThemeController, () => ({
+    __proto__: dart.getMethods(theme_controller.ThemeController.__proto__),
+    [_getPreviousSavedTheme]: dart.fnType(async.Future$(dart.nullable(core.String)), []),
+    [_setThemeByIndex]: dart.fnType(dart.void, [core.int]),
+    nextTheme: dart.fnType(dart.void, []),
+    setTheme: dart.fnType(dart.void, [core.String]),
+    loadThemeFromDisk: dart.fnType(async.Future$(dart.void), []),
+    saveThemeToDisk: dart.fnType(async.Future$(dart.void), []),
+    hasTheme: dart.fnType(core.bool, [core.String]),
+    addTheme: dart.fnType(dart.void, [app_theme.AppTheme]),
+    removeTheme: dart.fnType(dart.void, [core.String]),
+    forgetSavedTheme: dart.fnType(async.Future$(dart.void), [])
+  }));
+  dart.setGetterSignature(theme_controller.ThemeController, () => ({
+    __proto__: dart.getGetters(theme_controller.ThemeController.__proto__),
+    theme: app_theme.AppTheme,
+    currentThemeId: core.String,
+    providerId: core.String,
+    allThemes: core.List$(app_theme.AppTheme)
+  }));
+  dart.setLibraryUri(theme_controller.ThemeController, I[6]);
+  dart.setFieldSignature(theme_controller.ThemeController, () => ({
+    __proto__: dart.getFields(theme_controller.ThemeController.__proto__),
+    [_currentThemeIndex]: dart.fieldType(core.int),
+    [_appThemes]: dart.finalFieldType(core.Map$(core.String, app_theme.AppTheme)),
+    [_appThemeIds]: dart.finalFieldType(core.List$(core.String)),
+    [_saveAdapter]: dart.finalFieldType(save_adapter.SaveAdapter),
+    [_saveThemesOnChange]: dart.finalFieldType(core.bool),
+    [_loadThemeOnInit]: dart.finalFieldType(core.bool),
+    [_onThemeChanged]: dart.finalFieldType(dart.fnType(dart.void, [app_theme.AppTheme, app_theme.AppTheme])),
+    [_providerId]: dart.finalFieldType(core.String)
+  }));
+  inherited_theme.InheritedThemeController = class InheritedThemeController extends inherited_notifier.InheritedNotifier$(theme_controller.ThemeController) {
+    get controller() {
+      return this[controller$];
+    }
+    set controller(value) {
+      super.controller = value;
+    }
+    static of(context) {
+      let t0;
+      let controller = (t0 = context.dependOnInheritedWidgetOfExactType(inherited_theme.InheritedThemeController), t0 == null ? null : t0.controller);
+      if (!(controller != null)) dart.assertFailed("Could not find a theme controller in the widget tree", I[4], 23, 12, "controller != null");
+      return dart.nullCheck(controller);
+    }
+  };
+  (inherited_theme.InheritedThemeController.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let controller = opts && 'controller' in opts ? opts.controller : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[controller$] = controller;
+    inherited_theme.InheritedThemeController.__proto__.new.call(this, {key: key, child: child, notifier: controller, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = inherited_theme.InheritedThemeController.prototype;
+  dart.addTypeTests(inherited_theme.InheritedThemeController);
+  dart.addTypeCaches(inherited_theme.InheritedThemeController);
+  dart.setLibraryUri(inherited_theme.InheritedThemeController, I[7]);
+  dart.setFieldSignature(inherited_theme.InheritedThemeController, () => ({
+    __proto__: dart.getFields(inherited_theme.InheritedThemeController.__proto__),
+    controller: dart.finalFieldType(theme_controller.ThemeController)
+  }));
+  var child$0 = dart.privateName(theme_provider, "ThemeProvider.child");
+  var defaultThemeId$ = dart.privateName(theme_provider, "ThemeProvider.defaultThemeId");
+  var themes$ = dart.privateName(theme_provider, "ThemeProvider.themes");
+  var saveThemesOnChange$ = dart.privateName(theme_provider, "ThemeProvider.saveThemesOnChange");
+  var loadThemeOnInit$ = dart.privateName(theme_provider, "ThemeProvider.loadThemeOnInit");
+  var onInitCallback$ = dart.privateName(theme_provider, "ThemeProvider.onInitCallback");
+  var onThemeChanged$ = dart.privateName(theme_provider, "ThemeProvider.onThemeChanged");
+  var providerId$ = dart.privateName(theme_provider, "ThemeProvider.providerId");
+  theme_provider.ThemeProvider = class ThemeProvider extends framework.StatelessWidget {
+    get child() {
+      return this[child$0];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    get defaultThemeId() {
+      return this[defaultThemeId$];
+    }
+    set defaultThemeId(value) {
+      super.defaultThemeId = value;
+    }
+    get themes() {
+      return this[themes$];
+    }
+    set themes(value) {
+      super.themes = value;
+    }
+    get saveThemesOnChange() {
+      return this[saveThemesOnChange$];
+    }
+    set saveThemesOnChange(value) {
+      super.saveThemesOnChange = value;
+    }
+    get loadThemeOnInit() {
+      return this[loadThemeOnInit$];
+    }
+    set loadThemeOnInit(value) {
+      super.loadThemeOnInit = value;
+    }
+    get onInitCallback() {
+      return this[onInitCallback$];
+    }
+    set onInitCallback(value) {
+      super.onInitCallback = value;
+    }
+    get onThemeChanged() {
+      return this[onThemeChanged$];
+    }
+    set onThemeChanged(value) {
+      super.onThemeChanged = value;
+    }
+    get providerId() {
+      return this[providerId$];
+    }
+    set providerId(value) {
+      super.providerId = value;
+    }
+    static controllerOf(context) {
+      return inherited_theme.InheritedThemeController.of(context);
+    }
+    static optionsOf(T, context) {
+      return T.as(theme_provider.ThemeProvider.controllerOf(context).theme.options);
+    }
+    static themeOf(context) {
+      return theme_provider.ThemeProvider.controllerOf(context).theme;
+    }
+    build(context) {
+      return new inherited_theme.InheritedThemeController.new({controller: new theme_controller.ThemeController.new({providerId: this.providerId, themes: this.themes, defaultThemeId: this.defaultThemeId, onInitCallback: this.onInitCallback, onThemeChanged: this.onThemeChanged, loadThemeOnInit: this.loadThemeOnInit, saveThemesOnChange: this.saveThemesOnChange}), child: this.child, $creationLocationd_0dea112b090073317d4: C[61] || CT.C61});
+    }
+  };
+  (theme_provider.ThemeProvider.new = function(opts) {
+    let t0;
+    let key = opts && 'key' in opts ? opts.key : null;
+    let providerId = opts && 'providerId' in opts ? opts.providerId : "default";
+    let themes = opts && 'themes' in opts ? opts.themes : null;
+    let defaultThemeId = opts && 'defaultThemeId' in opts ? opts.defaultThemeId : null;
+    let onInitCallback = opts && 'onInitCallback' in opts ? opts.onInitCallback : null;
+    let onThemeChanged = opts && 'onThemeChanged' in opts ? opts.onThemeChanged : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let saveThemesOnChange = opts && 'saveThemesOnChange' in opts ? opts.saveThemesOnChange : false;
+    let loadThemeOnInit = opts && 'loadThemeOnInit' in opts ? opts.loadThemeOnInit : false;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[providerId$] = providerId;
+    this[defaultThemeId$] = defaultThemeId;
+    this[onInitCallback$] = onInitCallback;
+    this[onThemeChanged$] = onThemeChanged;
+    this[child$0] = child;
+    this[saveThemesOnChange$] = saveThemesOnChange;
+    this[loadThemeOnInit$] = loadThemeOnInit;
+    this[themes$] = (t0 = themes, t0 == null ? T.JSArrayOfAppTheme().of([app_theme.AppTheme.light(), app_theme.AppTheme.dark()]) : t0);
+    theme_provider.ThemeProvider.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    if (!(this.themes[$length] >= 2)) dart.assertFailed("Theme list must have at least 2 themes.", I[8], 65, 12, "this.themes.length >= 2");
+  }).prototype = theme_provider.ThemeProvider.prototype;
+  dart.addTypeTests(theme_provider.ThemeProvider);
+  dart.addTypeCaches(theme_provider.ThemeProvider);
+  dart.setMethodSignature(theme_provider.ThemeProvider, () => ({
+    __proto__: dart.getMethods(theme_provider.ThemeProvider.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(theme_provider.ThemeProvider, I[9]);
+  dart.setFieldSignature(theme_provider.ThemeProvider, () => ({
+    __proto__: dart.getFields(theme_provider.ThemeProvider.__proto__),
+    child: dart.finalFieldType(framework.Widget),
+    defaultThemeId: dart.finalFieldType(dart.nullable(core.String)),
+    themes: dart.finalFieldType(core.List$(app_theme.AppTheme)),
+    saveThemesOnChange: dart.finalFieldType(core.bool),
+    loadThemeOnInit: dart.finalFieldType(core.bool),
+    onInitCallback: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [theme_controller.ThemeController, async.Future$(dart.nullable(core.String))]))),
+    onThemeChanged: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [app_theme.AppTheme, app_theme.AppTheme]))),
+    providerId: dart.finalFieldType(core.String)
+  }));
+  var data$ = dart.privateName(app_theme, "AppTheme.data");
+  var options$ = dart.privateName(app_theme, "AppTheme.options");
+  var id$ = dart.privateName(app_theme, "AppTheme.id");
+  var description$ = dart.privateName(app_theme, "AppTheme.description");
+  app_theme.AppTheme = class AppTheme extends core.Object {
+    get data() {
+      return this[data$];
+    }
+    set data(value) {
+      super.data = value;
+    }
+    get options() {
+      return this[options$];
+    }
+    set options(value) {
+      super.options = value;
+    }
+    get id() {
+      return this[id$];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get description() {
+      return this[description$];
+    }
+    set description(value) {
+      super.description = value;
+    }
+    static light(opts) {
+      let t0;
+      let id = opts && 'id' in opts ? opts.id : null;
+      return new app_theme.AppTheme.new({data: theme_data.ThemeData.light(), id: (t0 = id, t0 == null ? "default_light_theme" : t0), description: "Android Default Light Theme"});
+    }
+    static dark(opts) {
+      let t0;
+      let id = opts && 'id' in opts ? opts.id : null;
+      return new app_theme.AppTheme.new({data: theme_data.ThemeData.dark(), id: (t0 = id, t0 == null ? "default_dark_theme" : t0), description: "Android Default Dark Theme"});
+    }
+    static purple(opts) {
+      let t0;
+      let id = opts && 'id' in opts ? opts.id : null;
+      return new app_theme.AppTheme.new({data: theme_data.ThemeData.light().copyWith({primaryColor: colors.Colors.purple, accentColor: colors.Colors.pink}), id: (t0 = id, t0 == null ? "default_purple_theme" : t0), description: "Custom Default Purple Theme"});
+    }
+    copyWith(opts) {
+      let t0, t0$, t0$0;
+      let id = opts && 'id' in opts ? opts.id : null;
+      let description = opts && 'description' in opts ? opts.description : null;
+      let data = opts && 'data' in opts ? opts.data : null;
+      let options = opts && 'options' in opts ? opts.options : null;
+      return new app_theme.AppTheme.new({id: id, description: (t0 = description, t0 == null ? this.description : t0), data: (t0$ = data, t0$ == null ? this.data : t0$), options: (t0$0 = options, t0$0 == null ? this.options : t0$0)});
+    }
+  };
+  (app_theme.AppTheme.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let data = opts && 'data' in opts ? opts.data : null;
+    let description = opts && 'description' in opts ? opts.description : null;
+    let options = opts && 'options' in opts ? opts.options : null;
+    this[id$] = id;
+    this[data$] = data;
+    this[description$] = description;
+    this[options$] = options;
+    if (!(this.description.length < 30)) dart.assertFailed("Theme description too long (" + this.id + ")", I[10], 80, 12, "description.length < 30");
+    if (!this.id[$isNotEmpty]) dart.assertFailed("Id cannot be empty", I[10], 81, 12, "id.isNotEmpty");
+    if (!(this.id[$toLowerCase]() === this.id)) dart.assertFailed("Id has to be a lowercase string", I[10], 82, 12, "id.toLowerCase() == id");
+    if (!!this.id[$contains](" ")) dart.assertFailed("Id cannot contain spaces. (Use _ for spaces)", I[10], 83, 12, "!id.contains(\" \")");
+  }).prototype = app_theme.AppTheme.prototype;
+  dart.addTypeTests(app_theme.AppTheme);
+  dart.addTypeCaches(app_theme.AppTheme);
+  dart.setMethodSignature(app_theme.AppTheme, () => ({
+    __proto__: dart.getMethods(app_theme.AppTheme.__proto__),
+    copyWith: dart.fnType(app_theme.AppTheme, [], {data: dart.nullable(theme_data.ThemeData), description: dart.nullable(core.String), options: dart.nullable(app_theme_options.AppThemeOptions)}, {id: core.String})
+  }));
+  dart.setLibraryUri(app_theme.AppTheme, I[11]);
+  dart.setFieldSignature(app_theme.AppTheme, () => ({
+    __proto__: dart.getFields(app_theme.AppTheme.__proto__),
+    data: dart.finalFieldType(theme_data.ThemeData),
+    options: dart.finalFieldType(dart.nullable(app_theme_options.AppThemeOptions)),
+    id: dart.finalFieldType(core.String),
+    description: dart.finalFieldType(core.String)
+  }));
+  dart.trackLibraries("packages/theme_provider/src/widgets/theme_dialog.dart", {
+    "package:theme_provider/src/widgets/theme_dialog.dart": theme_dialog,
+    "package:theme_provider/src/widgets/cycle_theme_icon_button.dart": cycle_theme_icon_button,
+    "package:theme_provider/src/provider/theme_consumer.dart": theme_consumer,
+    "package:theme_provider/src/provider/inherited_theme.dart": inherited_theme,
+    "package:theme_provider/src/controller/theme_controller.dart": theme_controller,
+    "package:theme_provider/src/provider/theme_provider.dart": theme_provider,
+    "package:theme_provider/src/data/app_theme.dart": app_theme,
+    "package:theme_provider/theme_provider.dart": theme_provider$
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["theme_dialog.dart","cycle_theme_icon_button.dart","../provider/theme_consumer.dart","../controller/theme_controller.dart","../provider/inherited_theme.dart","../provider/theme_provider.dart","../data/app_theme.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../../packages/theme_provider/src/widgets/theme_dialog.dart.lib.js"}');
+  // Exports:
+  return {
+    src__widgets__theme_dialog: theme_dialog,
+    src__widgets__cycle_theme_icon_button: cycle_theme_icon_button,
+    src__provider__theme_consumer: theme_consumer,
+    src__provider__inherited_theme: inherited_theme,
+    src__controller__theme_controller: theme_controller,
+    src__provider__theme_provider: theme_provider,
+    src__data__app_theme: app_theme,
+    theme_provider: theme_provider$
+  };
+}));
+
+//# sourceMappingURL=theme_dialog.dart.lib.js.map

@@ -15,8 +15,6 @@ class _HomePageState extends State<HomePage> {
   final List<RestaurantAll> restaurant = restaurantall;
   @override
   Widget build(BuildContext context) {
-    final fPrimaryColor = Theme.of(context).primaryColor;
-    final sPrimaryColor = Theme.of(context).accentColor;
     final widthCustom = MediaQuery.of(context).size.width;
     final heightCustom = MediaQuery.of(context).size.height;
     return MaterialApp(
@@ -28,15 +26,19 @@ class _HomePageState extends State<HomePage> {
               width: widthCustom * 1,
               height: heightCustom * 1,
               padding: EdgeInsets.all(10),
-              color: Theme.of(context).primaryColor,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('backrround2.jpg'),
+                ),
+              ),
               child: Column(children: [
-                RenderAppBar(),
-                RenderSearchBar(),
-                RenderButtonRestaurant(),
-                RenderListviewRestaurant(),
-                RenderPopulaButton(),
-                RenderPupulaListview(),
-                RenderBottonBarMenu(),
+                renderAppBar(),
+                renderSearchBar(),
+                renderButtonRestaurant(),
+                renderListviewRestaurant(),
+                renderPopulaButton(),
+                renderPupulaListview(),
+                renderBottonBarMenu(),
               ]),
             ),
           ),
@@ -45,14 +47,12 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget RenderSearchBar() {
+  Widget renderSearchBar() {
     return Container(
-      color: Theme.of(context).primaryColor,
       height: 100,
       child: Row(
         children: [
           Container(
-            color: Theme.of(context).primaryColor,
             height: 60,
             width: 300,
             child: TextField(
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget RenderAppBar() {
+  Widget renderAppBar() {
     return Container(
       child: Row(
         children: [
@@ -126,10 +126,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget RenderButtonRestaurant() {
+  Widget renderButtonRestaurant() {
     return Container(
         height: 50,
-        color: Theme.of(context).primaryColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -154,9 +153,8 @@ class _HomePageState extends State<HomePage> {
         ));
   }
 
-  Widget RenderListviewRestaurant() {
+  Widget renderListviewRestaurant() {
     return Container(
-      color: Theme.of(context).primaryColor,
       width: 400,
       height: 200,
       child: ListView.builder(
@@ -197,10 +195,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget RenderPopulaButton() {
+  Widget renderPopulaButton() {
     return Container(
         height: 50,
-        color: Theme.of(context).primaryColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -218,11 +215,10 @@ class _HomePageState extends State<HomePage> {
         ));
   }
 
-  Widget RenderPupulaListview() {
+  Widget renderPupulaListview() {
     return Container(
       height: 200,
       width: 400,
-      color: Theme.of(context).primaryColor,
       child: ListView.builder(
           scrollDirection: Axis.vertical,
           itemCount: restaurant.length,
@@ -287,12 +283,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget RenderBottonBarMenu() {
+  Widget renderBottonBarMenu() {
     return Container(
       height: 80,
       width: MediaQuery.of(context).size.width * 1,
       decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Theme.of(context).accentColor)),
       child: Row(
