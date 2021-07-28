@@ -156,6 +156,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget renderListviewRestaurant() {
+    final fcolors = Theme.of(context).primaryColor;
+    final scolors = Theme.of(context).accentColor;
     return Container(
       width: 400,
       height: 200,
@@ -197,7 +199,7 @@ class _HomePageState extends State<HomePage> {
                   Text(
                     restaurant[index].name,
                     style: TextStyle(
-                        color: Theme.of(context).accentColor,
+                        color: scolors,
                         fontSize: 15,
                         fontWeight: FontWeight.bold),
                   ),
