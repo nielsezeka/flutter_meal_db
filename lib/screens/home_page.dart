@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('backrround2.jpg'),
+                  image: AssetImage('assets/backrround2.jpg'),
                 ),
               ),
               child: Column(children: [
