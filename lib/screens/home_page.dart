@@ -186,8 +186,7 @@ class _HomePageState extends State<HomePage> {
                           width: 150,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image:
-                                  NetworkImage(restaurant[index].imageURLFile),
+                              image: AssetImage(restaurant[index].imageURLFile),
                               fit: BoxFit.cover,
                             ),
                             borderRadius: BorderRadius.circular(10),
@@ -250,7 +249,7 @@ class _HomePageState extends State<HomePage> {
                     height: 70,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: NetworkImage(restaurant[index].imageURLFile),
+                          image: AssetImage(restaurant[index].imageURLFile),
                         ),
                         borderRadius: BorderRadius.circular(10)),
                   ),
