@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
       child: ListView.builder(
           itemCount: restaurant.length,
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
+          itemBuilder: (listViewContext, index) {
             return InkWell(
               onTap: () {
                 Navigator.push(
