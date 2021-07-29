@@ -15,7 +15,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
     final fcolors = Theme.of(context).primaryColor;
     final scolors = Theme.of(context).accentColor;
     return SafeArea(
-      child: Scaffold(
+        child: MaterialApp(
+      home: Scaffold(
         body: Container(
           height: heightCustom * 1,
           width: widthCustom * 1,
@@ -63,7 +64,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                               onPressed: () {},
                               child: Text(
                                 'Popula',
-                                style: TextStyle(color: fcolors),
+                                style: TextStyle(color: scolors),
                               ),
                             ),
                           ),
@@ -203,6 +204,6 @@ class _RestaurantPageState extends State<RestaurantPage> {
           ),
         ),
       ),
-    );
+    ));
   }
 }
