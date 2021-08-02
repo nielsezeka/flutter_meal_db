@@ -4,7 +4,8 @@ import 'package:flutter_meal_db/screens/home_page_restaurant_modelstest.dart';
 import 'package:flutter_meal_db/screens/food_item_page.dart';
 import 'package:theme_provider/theme_provider.dart';
 
-import 'restaurant_page.dart';
+import '../restaurant_page.dart';
+import 'home_page_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<RestaurantAll> restaurant = restaurantall;
+  final myBloc = HomePageBloc(); // khai bao bloc
   @override
   Widget build(BuildContext context) {
     final widthCustom = MediaQuery.of(context).size.width;
@@ -161,50 +163,57 @@ class _HomePageState extends State<HomePage> {
     return Container(
       width: 400,
       height: 200,
-      child: ListView.builder(
-          itemCount: restaurant.length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (listViewContext, index) {
-            return InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => RestaurantPage(),
-                  ),
-                );
-              },
-              child: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+      child: StreamBuilder<List<RestaurantModel>>(
+          stream: myBloc.restaurants,
+          builder: (context, snapshot) {
+            List<RestaurantModel> output =
+                snapshot.hasData ? snapshot.data! : [];
+            return ListView.builder(
+                itemCount: output.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (listViewContext, index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RestaurantPage(),
+                        ),
+                      );
+                    },
+                    child: Column(
                       children: [
                         Container(
-                          height: 150,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(restaurant[index].imageURLFile),
-                              fit: BoxFit.cover,
-                            ),
-                            borderRadius: BorderRadius.circular(10),
+                          padding: EdgeInsets.all(5),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 150,
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        restaurant[index].imageURLFile),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                            ],
                           ),
+                        ),
+                        Text(
+                          restaurant[index].name,
+                          style: TextStyle(
+                              color: scolors,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
-                  ),
-                  Text(
-                    restaurant[index].name,
-                    style: TextStyle(
-                        color: scolors,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            );
+                  );
+                });
           }),
     );
   }
