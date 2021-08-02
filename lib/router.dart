@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_meal_db/constants/routing.dart';
-import 'package:flutter_meal_db/screens/home_page.dart';
+import 'package:flutter_meal_db/screens/home_page/home_page.dart';
 import 'package:flutter_meal_db/screens/login_page.dart';
 import 'package:flutter_meal_db/screens/undefined_page.dart';
 
