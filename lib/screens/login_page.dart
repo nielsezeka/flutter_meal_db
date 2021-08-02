@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_meal_db/constants/routing.dart';
-import 'package:flutter_meal_db/screens/home_page.dart';
+import 'package:flutter_meal_db/screens/home_page/home_page.dart';
 import 'package:theme_provider/theme_provider.dart';
 
 class LoginPage extends StatefulWidget {
