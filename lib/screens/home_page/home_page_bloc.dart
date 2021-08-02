@@ -27,28 +27,47 @@ class HomePageBloc {
           imageURLFile: 'assets/pizza.jpg',
           name: 'HighLand',
         ),
-        RestaurantAll(
-          id: 2,
-          imageURLFile: 'assets/food.jpg',
-          name: 'Coffe House',
-        ),
-        RestaurantAll(
-          id: 3,
-          imageURLFile: 'assets/logo.png',
-          name: 'Ong Tho',
-        ),
-        RestaurantAll(
-          id: 4,
-          imageURLFile: 'assets/pizza.jpg',
-          name: 'dung test',
-        ),
-        RestaurantAll(
-          id: 5,
-          imageURLFile: 'assets/pizza.jpg',
-          name: 'dungtest 2',
-        ),
       ],
     );
+  }
+
+  BehaviorSubject<List<RestaurantAll>> populars =
+      BehaviorSubject<List<RestaurantAll>>.seeded([]);
+  addPoplulardata() {
+    List<RestaurantAll> currentPopular = populars.value;
+    currentPopular.add(
+      RestaurantAll(
+        id: 1,
+        imageURLFile: 'assets/pizza.jpg',
+        name: 'HighLand',
+      ),
+    );
+    populars.sink.add(currentPopular);
+  }
+
+  loadPopularData() {
+    populars.sink.add([
+      RestaurantAll(
+        id: 4,
+        imageURLFile: 'assets/pizza.jpg',
+        name: 'HighLand',
+      ),
+      RestaurantAll(
+        id: 1,
+        imageURLFile: 'assets/pizza.jpg',
+        name: 'HighLand',
+      ),
+      RestaurantAll(
+        id: 2,
+        imageURLFile: 'assets/food.jpg',
+        name: 'Coffe House',
+      ),
+      RestaurantAll(
+        id: 3,
+        imageURLFile: 'assets/logo.png',
+        name: 'Ong Tho',
+      ),
+    ]);
   }
 }
 

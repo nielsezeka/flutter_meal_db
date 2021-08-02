@@ -17,17 +17,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<RestaurantAll> restaurant = restaurantall;
-<<<<<<< HEAD:lib/screens/homepage/home_page.dart
-  final myBloc = HomePageBloc(); // khai bao bloc
-=======
+
   final myBloc = HomePageBloc(); // single screen
   @override
   void initState() {
     super.initState();
     myBloc.loadRestaurantData();
+    myBloc.loadPopularData();
   }
 
->>>>>>> 1f29b63cf131e418e2b723387fa74d340b8b7582:lib/screens/home_page/home_page.dart
   @override
   Widget build(BuildContext context) {
     final widthCustom = MediaQuery.of(context).size.width;
@@ -57,15 +55,11 @@ class _HomePageState extends State<HomePage> {
               ]),
             ),
           ),
-          floatingActionButton: CupertinoButton(
-            child: Container(
-              padding: EdgeInsets.all(20),
-              child: Text("ssss"),
-              color: Colors.yellow,
-            ),
+          floatingActionButton: FloatingActionButton(
             onPressed: () {
-              myBloc.addNewRestaurantTest();
+              myBloc.addPoplulardata();
             },
+            child: Icon(Icons.ac_unit_outlined),
           ),
         ),
       ),
@@ -184,18 +178,11 @@ class _HomePageState extends State<HomePage> {
     return Container(
       width: 400,
       height: 200,
-<<<<<<< HEAD:lib/screens/homepage/home_page.dart
-      child: StreamBuilder<List<RestaurantModel>>(
-          stream: myBloc.restaurants,
-          builder: (context, snapshot) {
-            List<RestaurantModel> output =
-                snapshot.hasData ? snapshot.data! : [];
-=======
       child: StreamBuilder<List<RestaurantAll>>(
           stream: myBloc.restaurants,
           builder: (context, snapshot) {
             List<RestaurantAll> output = snapshot.hasData ? snapshot.data! : [];
->>>>>>> 1f29b63cf131e418e2b723387fa74d340b8b7582:lib/screens/home_page/home_page.dart
+
             return ListView.builder(
                 itemCount: output.length,
                 scrollDirection: Axis.horizontal,
@@ -221,13 +208,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 150,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-<<<<<<< HEAD:lib/screens/homepage/home_page.dart
-                                    image: AssetImage(
-                                        restaurant[index].imageURLFile),
-=======
                                     image:
                                         AssetImage(output[index].imageURLFile),
->>>>>>> 1f29b63cf131e418e2b723387fa74d340b8b7582:lib/screens/home_page/home_page.dart
                                     fit: BoxFit.cover,
                                   ),
                                   borderRadius: BorderRadius.circular(10),
@@ -237,11 +219,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Text(
-<<<<<<< HEAD:lib/screens/homepage/home_page.dart
-                          restaurant[index].name,
-=======
                           output[index].name,
->>>>>>> 1f29b63cf131e418e2b723387fa74d340b8b7582:lib/screens/home_page/home_page.dart
                           style: TextStyle(
                               color: scolors,
                               fontSize: 15,
@@ -279,66 +257,73 @@ class _HomePageState extends State<HomePage> {
     return Container(
       height: 200,
       width: 400,
-      child: ListView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: restaurant.length,
-          itemBuilder: (context, index) {
-            return Container(
-              padding: EdgeInsets.all(1),
-              height: 70,
-              width: 400,
-              child: Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(5),
-                    width: 70,
+      child: StreamBuilder<List<RestaurantAll>>(
+          stream: myBloc.populars,
+          builder: (context, snapshot) {
+            List<RestaurantAll> outputPopulars =
+                snapshot.hasData ? snapshot.data! : [];
+            return ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: outputPopulars.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    padding: EdgeInsets.all(1),
                     height: 70,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(restaurant[index].imageURLFile),
-                        ),
-                        borderRadius: BorderRadius.circular(10)),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(15),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    width: 400,
+                    child: Row(
                       children: [
-                        Text(
-                          'Ten Mon An',
-                          style: TextStyle(
-                              color: Theme.of(context).accentColor,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
+                        Container(
+                          padding: EdgeInsets.all(5),
+                          width: 70,
+                          height: 70,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    outputPopulars[index].imageURLFile),
+                              ),
+                              borderRadius: BorderRadius.circular(10)),
                         ),
-                        Text(
-                          restaurant[index].name,
-                          style:
-                              TextStyle(color: Theme.of(context).accentColor),
+                        Container(
+                          padding: EdgeInsets.all(15),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Ten Mon An',
+                                style: TextStyle(
+                                    color: Theme.of(context).accentColor,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                outputPopulars[index].name,
+                                style: TextStyle(
+                                    color: Theme.of(context).accentColor),
+                              ),
+                            ],
+                          ),
                         ),
+                        Expanded(
+                            child: Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                '30 \$',
+                                style: TextStyle(
+                                    color: Colors.green[800],
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                            ],
+                          ),
+                        ))
                       ],
                     ),
-                  ),
-                  Expanded(
-                      child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          '30 \$',
-                          style: TextStyle(
-                              color: Colors.green[800],
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                      ],
-                    ),
-                  ))
-                ],
-              ),
-            );
+                  );
+                });
           }),
     );
   }
